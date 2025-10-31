@@ -3,6 +3,7 @@ layout: null
 title: Catholic Collection
 permalink: /collections/catholic/
 ---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,12 +34,7 @@ permalink: /collections/catholic/
       <div class="pattern-grid">
         {% for p in items %}
           <a href="{{ p.url | relative_url }}" class="pattern-card">
-            <img 
-              src="{{ (p.thumb | default: p.image) | relative_url }}" 
-              alt="{{ p.title | escape }}" 
-              loading="lazy" 
-              width="300" 
-              height="300">
+            <img src="{{ (p.thumb | default: p.image) | relative_url }}" alt="{{ p.title | escape }}" loading="lazy" width="300" height="300">
             <h3>{{ p.title }}</h3>
             <p>{{ p.description }}</p>
           </a>
