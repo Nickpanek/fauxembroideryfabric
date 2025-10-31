@@ -34,7 +34,7 @@ permalink: /collections/geometric/
       <div class="pattern-grid">
         {% for p in items %}
           <a href="{{ p.url | relative_url }}" class="pattern-card">
-            <img src="{{ (p.thumb | default: p.image) | relative_url }}" alt="{{ p.title }}" loading="lazy" width="300" height="300">
+            <img src="{{ site.baseurl }}/assets/images/{{ p.image }}" alt="{{ p.title }}" loading="lazy" width="300" height="300">
             <h3>{{ p.title }}</h3>
             <p>{{ p.description }}</p>
           </a>
