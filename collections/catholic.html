@@ -11,18 +11,18 @@ permalink: /collections/catholic/
   <title>Catholic Faux-Embroidery Patterns | {{ site.title }}</title>
   <meta name="description" content="Devotional and saint-inspired faux-embroidery fabric designs.">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
 </head>
 <body>
   <header>
     <nav>
-      <a href="{{ '/' | relative_url }}" class="logo">{{ site.title }}</a>
+      <a href="{{ site.baseurl }}/" class="logo">{{ site.title }}</a>
       <div class="nav-links">
-        <a href="{{ '/collections/florals' | relative_url }}">Florals</a>
-        <a href="{{ '/collections/catholic' | relative_url }}" class="active">Catholic</a>
-        <a href="{{ '/collections/western' | relative_url }}">Western</a>
-        <a href="{{ '/collections/holiday' | relative_url }}">Holiday</a>
-        <a href="{{ '/collections/geometric' | relative_url }}">Geometric</a>
+        <a href="{{ site.baseurl }}/collections/florals">Florals</a>
+        <a href="{{ site.baseurl }}/collections/catholic" class="active">Catholic</a>
+        <a href="{{ site.baseurl }}/collections/western">Western</a>
+        <a href="{{ site.baseurl }}/collections/holiday">Holiday</a>
+        <a href="{{ site.baseurl }}/collections/geometric">Geometric</a>
       </div>
     </nav>
   </header>
@@ -35,9 +35,9 @@ permalink: /collections/catholic/
       <div class="pattern-grid">
         {% for p in items %}
           <a href="{{ p.url | relative_url }}" class="pattern-card">
-            <!-- Force images to come from /assets/images/ and include baseurl -->
+            <!-- Use explicit baseurl + assets/images + filename -->
             <img
-              src="{{ '/assets/images/' | append: p.image | relative_url }}"
+              src="{{ site.baseurl }}/assets/images/{{ p.image }}"
               alt="{{ p.title | escape }}"
               loading="lazy"
               width="300"
