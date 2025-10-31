@@ -18,11 +18,11 @@ permalink: /collections/catholic/
     <nav>
       <a href="{{ '/' | relative_url }}" class="logo">{{ site.title }}</a>
       <div class="nav-links">
-        <a href="{{ '/collections/florals'  | relative_url }}">Florals</a>
-        <a href="{{ '/collections/catholic' | relative_url }}" class="active">Catholic</a>
-        <a href="{{ '/collections/western'  | relative_url }}">Western</a>
-        <a href="{{ '/collections/holiday'  | relative_url }}">Holiday</a>
-        <a href="{{ '/collections/geometric'| relative_url }}">Geometric</a>
+        <a href="{{ '/collections/florals'   | relative_url }}">Florals</a>
+        <a href="{{ '/collections/catholic'  | relative_url }}" class="active">Catholic</a>
+        <a href="{{ '/collections/western'   | relative_url }}">Western</a>
+        <a href="{{ '/collections/holiday'   | relative_url }}">Holiday</a>
+        <a href="{{ '/collections/geometric' | relative_url }}">Geometric</a>
       </div>
     </nav>
   </header>
@@ -30,13 +30,14 @@ permalink: /collections/catholic/
   <main>
     <h1 style="text-align:center;margin:2rem 0;">Catholic Collection</h1>
 
-    {% assign items = site.patterns | where: 'collection_slug', 'catholic' | sort: 'lastmod' | reverse %}
-    {% if items and items.size > 0 %}
+    {%- assign items = site.patterns | where: 'collection_slug', 'catholic' | sort: 'lastmod' | reverse -%}
+    {%- if items and items.size > 0 -%}
       <div class="pattern-grid">
-        {% for p in items %}
+        {%- for p in items -%}
           <a href="{{ p.url | relative_url }}" class="pattern-card">
+            <!-- EXACT same image approach as homepage -->
             <img
-              src="{{ '/assets/images/' | absolute_url }}{{ p.image }}"
+              src="{{ site.baseurl }}/assets/images/{{ p.image }}"
               alt="{{ p.title | escape }}"
               loading="lazy"
               width="300"
@@ -44,11 +45,11 @@ permalink: /collections/catholic/
             <h3>{{ p.title }}</h3>
             <p>{{ p.description }}</p>
           </a>
-        {% endfor %}
+        {%- endfor -%}
       </div>
-    {% else %}
+    {%- else -%}
       <p style="text-align:center;color:#666;">Catholic patterns coming soon.</p>
-    {% endif %}
+    {%- endif -%}
   </main>
 
   <footer>
