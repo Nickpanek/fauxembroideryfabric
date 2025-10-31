@@ -6,8 +6,8 @@ description: A richly detailed embroidered pattern of Our Lady of Guadalupe surr
 image: /assets/images/embroidered-our-lady-of-guadalupe-floral-pattern-on-dark-fabric-full.jpg
 thumb: /assets/images/embroidered-our-lady-of-guadalupe-floral-pattern-on-dark-fabric-thumb.jpg
 buy_url: https://www.spoonflower.com/en/fabric/19464204?utm_source=fauxembroideryfabric
-collection_slug: florals
-collection_name: Florals
+collection_slug: catholic
+collection_name: Catholic
 tags: [our, lady, guadalupe, floral, dark, richly, detailed, surrounded, blooming, florals, soft, pink, coral, gold, tones, charcoal, back, 19464204]
 materials: cotton
 repeat_size: "6 in"
