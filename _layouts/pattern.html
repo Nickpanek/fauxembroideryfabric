@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | Faux Embroidery Fabric</title>
+  <meta name="description" content="{{ page.description }}">
+  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.description }}">
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ page.image }}">
+  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+  <meta property="og:type" content="product">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page.title }}">
+  <meta name="twitter:description" content="{{ page.description }}">
+  <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ page.image }}">
+  
+  <!-- JSON-LD Product Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "{{ page.title }}",
+    "description": "{{ page.description }}",
+    "image": "{{ site.url }}{{ site.baseurl }}/assets/images/{{ page.image }}",
+    "brand": {
+      "@type": "Brand",
+      "name": "Nick Panek Designs"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "{{ page.buy_url }}",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Spoonflower"
+      }
+    },
+    "category": "Fabric",
+    "material": "{{ page.material | default: 'Cotton' }}",
+    "pattern": "{{ page.pattern_type | default: 'Embroidery' }}"
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="{{ site.baseurl }}/" class="logo">Faux Embroidery Fabric</a>
+      <div class="nav-links">
+        <a href="{{ site.baseurl }}/collections/florals">Florals</a>
+        <a href="{{ site.baseurl }}/collections/western">Western</a>
+        <a href="{{ site.baseurl }}/collections/holiday">Holiday</a>
+        <a href="{{ site.baseurl }}/collections/geometric">Geometric</a>
+      </div>
+    </nav>
+  </header>
+  
+  <main class="pattern-page">
+    <div class="pattern-container">
+      <div class="pattern-image">
+        <img src="{{ site.baseurl }}/assets/images/{{ page.image }}" alt="{{ page.title }}" loading="lazy">
+      </div>
+      
+      <div class="pattern-details">
+        <h1>{{ page.title }}</h1>
+        <p class="description">{{ page.description }}</p>
+        
+        {% if page.tags %}
+        <div class="tags">
+          {% for tag in page.tags %}
+          <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+        
+        <div class="pattern-info">
+          {% if page.color_palette %}
+          <p><strong>Colors:</strong> {{ page.color_palette }}</p>
+          {% endif %}
+          {% if page.scale %}
+          <p><strong>Scale:</strong> {{ page.scale }}</p>
+          {% endif %}
+          {% if page.repeat %}
+          <p><strong>Repeat:</strong> {{ page.repeat }}</p>
+          {% endif %}
+        </div>
+        
+        <a href="{{ page.buy_url }}" class="buy-button" target="_blank" rel="noopener">
+          View on Spoonflower →
+        </a>
+        
+        {% if page.content != "" %}
+        <div class="additional-info">
+          {{ content }}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    
+    <!-- Related patterns -->
+    <section class="related-patterns">
+      <h2>You May Also Like</h2>
+      <div class="pattern-grid">
+        {% assign related = site.patterns | where: 'collection_slug', page.collection_slug | where_exp: 'item', 'item.url != page.url' | limit: 3 %}
+        {% for pattern in related %}
+        <a href="{{ pattern.url | prepend: site.baseurl }}" class="pattern-card">
+          <img src="{{ site.baseurl }}/assets/images/{{ pattern.image }}" alt="{{ pattern.title }}" loading="lazy">
+          <h3>{{ pattern.title }}</h3>
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; {{ site.time | date: '%Y' }} Faux Embroidery Fabric | All rights reserved.</p>
+  </footer>
+</body>
+</html>
