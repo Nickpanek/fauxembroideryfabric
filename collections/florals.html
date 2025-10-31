@@ -1,1 +1,60 @@
-
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Floral Embroidery Patterns | Faux Embroidery Fabric</title>
+  <meta name="description" content="Browse botanical and garden-inspired faux embroidery fabric designs. Roses, wildflowers, and vintage floral patterns for quilting and crafts.">
+  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}/collections/florals">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="{{ site.baseurl }}/" class="logo">Faux Embroidery Fabric</a>
+      <div class="nav-links">
+        <a href="{{ site.baseurl }}/collections/florals" class="active">Florals</a>
+        <a href="{{ site.baseurl }}/collections/western">Western</a>
+        <a href="{{ site.baseurl }}/collections/holiday">Holiday</a>
+        <a href="{{ site.baseurl }}/collections/geometric">Geometric</a>
+      </div>
+    </nav>
+  </header>
+  
+  <main>
+    <div class="collection-header">
+      <h1>Floral Embroidery Patterns</h1>
+      <p>Botanical and garden-inspired designs with the charm of hand-stitched embroidery</p>
+    </div>
+    
+    {% assign floral_patterns = site.patterns | where: 'collection_slug', 'florals' %}
+    
+    {% if floral_patterns.size > 0 %}
+    <div class="pattern-grid">
+      {% for pattern in floral_patterns %}
+      <a href="{{ pattern.url | prepend: site.baseurl }}" class="pattern-card">
+        <img src="{{ site.baseurl }}/assets/images/{{ pattern.image }}" alt="{{ pattern.title }}" loading="lazy">
+        <h3>{{ pattern.title }}</h3>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div style="text-align: center; padding: 4rem 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <p style="font-size: 1.2rem; color: #666;">Floral patterns coming soon!</p>
+      <p style="margin-top: 1rem;">
+        <a href="https://www.spoonflower.com/profiles/nickpanek" target="_blank" rel="noopener" style="color: #204a87;">
+          Visit our Spoonflower shop for current designs →
+        </a>
+      </p>
+    </div>
+    {% endif %}
+  </main>
+  
+  <footer>
+    <p>&copy; {{ site.time | date: '%Y' }} Faux Embroidery Fabric | All rights reserved.</p>
+  </footer>
+</body>
+</html>
