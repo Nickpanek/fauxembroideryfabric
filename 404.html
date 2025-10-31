@@ -2,6 +2,7 @@
 layout: null
 permalink: /404.html
 ---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +12,7 @@ permalink: /404.html
   <meta name="description" content="The page you're looking for doesn't exist. Redirecting to our Spoonflower shop.">
   <meta http-equiv="refresh" content="3;url=https://www.spoonflower.com/profiles/nickpanek">
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
-  
+
   <style>
     .error-page {
       min-height: 100vh;
@@ -20,7 +21,7 @@ permalink: /404.html
       background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), 
                   url('{{ site.baseurl }}/assets/images/404-bg.jpg') center/cover;
     }
-    
+
     .oops {
       font-size: 5rem;
       color: #204a87;
@@ -28,7 +29,7 @@ permalink: /404.html
       margin-bottom: 1rem;
       animation: bounce 1s infinite;
     }
-    
+
     .countdown {
       display: inline-block;
       font-weight: bold;
@@ -37,17 +38,17 @@ permalink: /404.html
       min-width: 1.5ch;
       animation: pulse 1s infinite;
     }
-    
+
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
-    
+
     @keyframes pulse {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.1); }
     }
-    
+
     .redirect-box {
       background: rgba(32, 74, 135, 0.05);
       border: 2px solid #204a87;
@@ -55,12 +56,12 @@ permalink: /404.html
       padding: 1.5rem;
       margin-top: 1.5rem;
     }
-    
+
     .loading-dots {
       display: inline-block;
       animation: dots 1.5s infinite;
     }
-    
+
     @keyframes dots {
       0%, 20% { content: '.'; }
       40% { content: '..'; }
@@ -80,7 +81,7 @@ permalink: /404.html
       </div>
     </nav>
   </header>
-  
+
   <main style="flex: 1; display: flex; align-items: center; justify-content: center;">
     <div class="error-404">
       <div class="oops">Oops!</div>
@@ -88,14 +89,14 @@ permalink: /404.html
       <p style="font-size: 1.2rem; color: #666; margin-bottom: 0.5rem;">
         Looks like this pattern got lost in the fabric stash!
       </p>
-      
+
       <div class="redirect-box">
         <p style="font-size: 1.1rem; color: #333; margin: 0;">
           Redirecting to our Spoonflower shop in 
           <span class="countdown" id="countdown">3</span> seconds<span class="loading-dots">...</span>
         </p>
       </div>
-      
+
       <div style="margin-top: 2rem;">
         <a href="{{ site.baseurl }}/" class="buy-button" style="margin-right: 1rem;">
           ← Back to Home
@@ -104,26 +105,26 @@ permalink: /404.html
           Go to Spoonflower Now →
         </a>
       </div>
-      
+
       <p style="margin-top: 2rem; font-size: 0.9rem; color: #999;">
         Or wait to be automatically redirected...
       </p>
     </div>
   </main>
-  
+
   <footer>
     <p>&copy; {{ site.time | date: '%Y' }} Faux Embroidery Fabric | All rights reserved.</p>
   </footer>
-  
+
   <script>
     // 3 second countdown timer
     let seconds = 3;
     const countdownElement = document.getElementById('countdown');
-    
+
     const timer = setInterval(() => {
       seconds--;
       countdownElement.textContent = seconds;
-      
+
       if (seconds <= 0) {
         clearInterval(timer);
         countdownElement.textContent = '0';
@@ -131,7 +132,7 @@ permalink: /404.html
         window.location.href = 'https://www.spoonflower.com/profiles/nickpanek';
       }
     }, 1000);
-    
+
     // Animated dots effect
     const dotsElement = document.querySelector('.loading-dots');
     let dots = '.';
