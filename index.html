@@ -1,35 +1,25 @@
 ---
 layout: null
+title: Catholic Collection
+permalink: /collections/catholic/
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ site.title }} | Handcrafted Stitched Designs</title>
-  <meta name="description" content="Browse faux-embroidery fabric patterns linking directly to Spoonflower listings. Vintage, floral, Catholic, western, holiday, and geometric stitched styles.">
+  <title>Catholic Faux-Embroidery Patterns | {{ site.title }}</title>
+  <meta name="description" content="Devotional and saint-inspired faux-embroidery fabric designs.">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-  <link rel="preconnect" href="https://www.spoonflower.com" crossorigin>
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="{{ site.title }}">
-  <meta property="og:description" content="{{ site.description }}">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ page.url | absolute_url }}">
-
-  {% seo %}
 </head>
 <body>
-  <a href="#main" class="visually-hidden-focusable">Skip to content</a>
-
-  <header role="banner">
-    <nav aria-label="Primary">
+  <header>
+    <nav>
       <a href="{{ '/' | relative_url }}" class="logo">{{ site.title }}</a>
       <div class="nav-links">
         <a href="{{ '/collections/florals'   | relative_url }}">Florals</a>
-        <a href="{{ '/collections/catholic'  | relative_url }}">Catholic</a>
+        <a href="{{ '/collections/catholic'  | relative_url }}" class="active">Catholic</a>
         <a href="{{ '/collections/western'   | relative_url }}">Western</a>
         <a href="{{ '/collections/holiday'   | relative_url }}">Holiday</a>
         <a href="{{ '/collections/geometric' | relative_url }}">Geometric</a>
@@ -37,25 +27,13 @@ layout: null
     </nav>
   </header>
 
-  <main id="main">
-    <!-- Hero -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div style="text-align:center;padding:3rem 1rem;background:white;border-radius:8px;margin-bottom:2rem;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
-        <h1 id="hero-title" style="font-size:2.5rem;margin-bottom:1rem;">Faux Embroidery Fabric Designs</h1>
-        <p style="font-size:1.2rem;color:#666;max-width:600px;margin:0 auto;">
-          Discover stitched-look fabric patterns for quilting, crafts, and home decor. Printed on demand via Spoonflower.
-        </p>
-      </div>
-    </section>
+  <main>
+    <h1 style="text-align:center;margin:2rem 0;">Catholic Collection</h1>
 
-    <!-- Latest Patterns -->
-    <section aria-labelledby="latest-title">
-      <h2 id="latest-title" style="font-size:1.8rem;margin-bottom:1.5rem;text-align:center;">Latest Patterns</h2>
-
-      {% assign items = site.patterns | sort: 'lastmod' | reverse %}
-      {% if items and items.size > 0 %}
+    {% assign items = site.patterns | where: 'collection_slug', 'catholic' | sort: 'lastmod' | reverse %}
+    {% if items and items.size > 0 %}
       <div class="pattern-grid">
-        {% for p in items limit:12 %}
+        {% for p in items %}
         <a href="{{ p.url | relative_url }}" class="pattern-card">
           <img
             src="{{ site.baseurl }}/assets/images/{{ p.image }}"
@@ -68,44 +46,9 @@ layout: null
         </a>
         {% endfor %}
       </div>
-      {% else %}
-      <div style="text-align:center;padding:4rem 2rem;background:white;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
-        <p style="font-size:1.2rem;color:#666;">First collection coming soon.</p>
-        <p style="margin-top:1rem;">
-          <a href="https://www.spoonflower.com/profiles/nickpanek" target="_blank" rel="noopener" style="color:#204a87;">
-            Visit our Spoonflower shop ->
-          </a>
-        </p>
-      </div>
-      {% endif %}
-    </section>
-
-    <!-- Browse by Collection -->
-    <section style="margin-top:3rem;" aria-labelledby="browse-title">
-      <h2 id="browse-title" style="font-size:1.8rem;margin-bottom:1.5rem;text-align:center;">Browse by Collection</h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;">
-        <a href="{{ '/collections/florals'   | relative_url }}"   style="padding:2rem;background:white;border-radius:8px;text-align:center;text-decoration:none;color:#333;box-shadow:0 2px 8px rgba(0,0,0,0.1);" aria-label="View Florals collection">
-          <h3 style="color:#204a87;">Florals</h3>
-          <p style="color:#666;margin-top:0.5rem;">Botanical and garden-inspired embroidery</p>
-        </a>
-        <a href="{{ '/collections/catholic'  | relative_url }}"   style="padding:2rem;background:white;border-radius:8px;text-align:center;text-decoration:none;color:#333;box-shadow:0 2px 8px rgba(0,0,0,0.1);" aria-label="View Catholic collection">
-          <h3 style="color:#204a87;">Catholic</h3>
-          <p style="color:#666;margin-top:0.5rem;">Devotional and saint-inspired faux embroidery</p>
-        </a>
-        <a href="{{ '/collections/western'   | relative_url }}"   style="padding:2rem;background:white;border-radius:8px;text-align:center;text-decoration:none;color:#333;box-shadow:0 2px 8px rgba(0,0,0,0.1);" aria-label="View Western collection">
-          <h3 style="color:#204a87;">Western</h3>
-          <p style="color:#666;margin-top:0.5rem;">Rustic and southwestern stitched designs</p>
-        </a>
-        <a href="{{ '/collections/holiday'   | relative_url }}"   style="padding:2rem;background:white;border-radius:8px;text-align:center;text-decoration:none;color:#333;box-shadow:0 2px 8px rgba(0,0,0,0.1);" aria-label="View Holiday collection">
-          <h3 style="color:#204a87;">Holiday</h3>
-          <p style="color:#666;margin-top:0.5rem;">Seasonal and festive embroidery patterns</p>
-        </a>
-        <a href="{{ '/collections/geometric' | relative_url }}"   style="padding:2rem;background:white;border-radius:8px;text-align:center;text-decoration:none;color:#333;box-shadow:0 2px 8px rgba(0,0,0,0.1);" aria-label="View Geometric collection">
-          <h3 style="color:#204a87;">Geometric</h3>
-          <p style="color:#666;margin-top:0.5rem;">Modern abstract stitched motifs</p>
-        </a>
-      </div>
-    </section>
+    {% else %}
+      <p style="text-align:center;color:#666;">Catholic patterns coming soon.</p>
+    {% endif %}
   </main>
 
   <footer>
