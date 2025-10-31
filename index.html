@@ -1,3 +1,5 @@
+From root: index.html
+
 ---
 layout: null
 ---
@@ -42,7 +44,7 @@ layout: null
       <div style="text-align:center;padding:3rem 1rem;background:white;border-radius:8px;margin-bottom:2rem;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
         <h1 id="hero-title" style="font-size:2.5rem;margin-bottom:1rem;">Faux Embroidery Fabric Designs</h1>
         <p style="font-size:1.2rem;color:#666;max-width:600px;margin:0 auto;">
-          Discover stitched-look fabric patterns for quilting, crafts, and home dÃ©cor. Printed on demand via Spoonflower.
+          Discover stitched-look fabric patterns for quilting, crafts, and home decor. Printed on demand via Spoonflower.
         </p>
       </div>
     </section>
@@ -58,7 +60,7 @@ layout: null
         <a href="{{ p.url | relative_url }}" class="pattern-card">
           <img
             src="{{ (p.thumb | default: p.image) | relative_url }}"
-            alt="{{ p.title }}"
+            alt="{{ p.title | escape }}"
             loading="lazy"
             width="300"
             height="300">
@@ -72,7 +74,7 @@ layout: null
         <p style="font-size:1.2rem;color:#666;">First collection coming soon.</p>
         <p style="margin-top:1rem;">
           <a href="https://www.spoonflower.com/profiles/nickpanek" target="_blank" rel="noopener" style="color:#204a87;">
-            Visit our Spoonflower shop â
+            Visit our Spoonflower shop ->
           </a>
         </p>
       </div>
