@@ -35,9 +35,8 @@ permalink: /collections/catholic/
       <div class="pattern-grid">
         {% for p in items %}
           <a href="{{ p.url | relative_url }}" class="pattern-card">
-            <!-- Absolute URL to avoid any baseurl/relative_url quirks -->
             <img
-              src="{{ site.url }}{{ site.baseurl }}/assets/images/{{ p.image }}"
+              src="{{ '/assets/images/' | absolute_url }}{{ p.image }}"
               alt="{{ p.title | escape }}"
               loading="lazy"
               width="300"
