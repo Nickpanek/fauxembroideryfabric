@@ -6,68 +6,64 @@ layout: null
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Faux Embroidery Fabric | Handcrafted Stitched Designs</title>
+  <title>{{ site.title }} | Handcrafted Stitched Designs</title>
   <meta name="description" content="Browse faux embroidery fabric patterns linking directly to Spoonflower listings. Vintage, floral, western, and geometric stitched styles.">
-  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}/">
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
-  
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
   <!-- Open Graph -->
-  <meta property="og:title" content="Faux Embroidery Fabric">
-  <meta property="og:description" content="Handcrafted stitched-look fabric designs printed on demand through Spoonflower">
+  <meta property="og:title" content="{{ site.title }}">
+  <meta property="og:description" content="{{ site.description }}">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/">
-  
-  <!-- JSON-LD Organization Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Faux Embroidery Fabric",
-    "url": "{{ site.url }}{{ site.baseurl }}/",
-    "description": "Showcasing stitched-look fabric designs printed on demand through Spoonflower",
-    "sameAs": ["https://www.spoonflower.com/profiles/nickpanek"]
-  }
-  </script>
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+
+  {% seo %}
 </head>
 <body>
   <header>
     <nav>
-      <a href="{{ site.baseurl }}/" class="logo">Faux Embroidery Fabric</a>
+      <a href="{{ '/' | relative_url }}" class="logo">{{ site.title }}</a>
       <div class="nav-links">
-        <a href="{{ site.baseurl }}/collections/florals">Florals</a>
-        <a href="{{ site.baseurl }}/collections/western">Western</a>
-        <a href="{{ site.baseurl }}/collections/holiday">Holiday</a>
-        <a href="{{ site.baseurl }}/collections/geometric">Geometric</a>
+        <a href="{{ '/collections/florals' | relative_url }}">Florals</a>
+        <a href="{{ '/collections/western' | relative_url }}">Western</a>
+        <a href="{{ '/collections/holiday' | relative_url }}">Holiday</a>
+        <a href="{{ '/collections/geometric' | relative_url }}">Geometric</a>
       </div>
     </nav>
   </header>
-  
+
   <main>
     <section class="hero">
       <div style="text-align: center; padding: 3rem 1rem; background: white; border-radius: 8px; margin-bottom: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
         <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Faux Embroidery Fabric Designs</h1>
         <p style="font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto;">
-          Discover unique stitched-look fabric patterns perfect for quilting, crafts, and home decor. 
-          Each design features the artisanal charm of hand embroidery, printed on premium Spoonflower fabric.
+          Discover stitched-look fabric patterns for quilting, crafts, and home decor. Printed on demand via Spoonflower.
         </p>
       </div>
     </section>
-    
+
     <section>
       <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem; text-align: center;">Latest Patterns</h2>
-      
-      {% if site.patterns.size > 0 %}
+
+      {% assign items = site.patterns | sort: 'lastmod' | reverse %}
+      {% if items and items.size > 0 %}
       <div class="pattern-grid">
-        {% for pattern in site.patterns limit:12 %}
-        <a href="{{ pattern.url | prepend: site.baseurl }}" class="pattern-card">
-          <img src="{{ site.baseurl }}/assets/images/{{ pattern.image }}" alt="{{ pattern.title }}" loading="lazy">
-          <h3>{{ pattern.title }}</h3>
+        {% for p in items limit:12 %}
+        <a href="{{ p.url | relative_url }}" class="pattern-card">
+          <img
+            src="{{ (p.thumb | default: p.image) | relative_url }}"
+            alt="{{ p.title }}"
+            loading="lazy"
+            width="300"
+            height="300">
+          <h3>{{ p.title }}</h3>
+          <p>{{ p.description }}</p>
         </a>
         {% endfor %}
       </div>
       {% else %}
       <div style="text-align: center; padding: 4rem 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-        <p style="font-size: 1.2rem; color: #666;">First collection coming soon!</p>
+        <p style="font-size: 1.2rem; color: #666;">First collection coming soon.</p>
         <p style="margin-top: 1rem;">
           <a href="https://www.spoonflower.com/profiles/nickpanek" target="_blank" rel="noopener" style="color: #204a87;">
             Visit our Spoonflower shop →
@@ -76,32 +72,32 @@ layout: null
       </div>
       {% endif %}
     </section>
-    
+
     <section style="margin-top: 3rem;">
       <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem; text-align: center;">Browse by Collection</h2>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
-        <a href="{{ site.baseurl }}/collections/florals" style="padding: 2rem; background: white; border-radius: 8px; text-align: center; text-decoration: none; color: #333; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s;">
+        <a href="{{ '/collections/florals'   | relative_url }}" style="padding: 2rem; background: white; border-radius: 8px; text-align: center; text-decoration: none; color: #333; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
           <h3 style="color: #204a87;">Florals</h3>
           <p style="color: #666; margin-top: 0.5rem;">Botanical and garden-inspired embroidery</p>
         </a>
-        <a href="{{ site.baseurl }}/collections/western" style="padding: 2rem; background: white; border-radius: 8px; text-align: center; text-decoration: none; color: #333; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s;">
+        <a href="{{ '/collections/western'   | relative_url }}" style="padding: 2rem; background: white; border-radius: 8px; text-align: center; text-decoration: none; color: #333; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
           <h3 style="color: #204a87;">Western</h3>
           <p style="color: #666; margin-top: 0.5rem;">Rustic and southwestern stitched designs</p>
         </a>
-        <a href="{{ site.baseurl }}/collections/holiday" style="padding: 2rem; background: white; border-radius: 8px; text-align: center; text-decoration: none; color: #333; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s;">
+        <a href="{{ '/collections/holiday'   | relative_url }}" style="padding: 2rem; background: white; border-radius: 8px; text-align: center; text-decoration: none; color: #333; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
           <h3 style="color: #204a87;">Holiday</h3>
           <p style="color: #666; margin-top: 0.5rem;">Seasonal and festive embroidery patterns</p>
         </a>
-        <a href="{{ site.baseurl }}/collections/geometric" style="padding: 2rem; background: white; border-radius: 8px; text-align: center; text-decoration: none; color: #333; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s;">
+        <a href="{{ '/collections/geometric' | relative_url }}" style="padding: 2rem; background: white; border-radius: 8px; text-align: center; text-decoration: none; color: #333; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
           <h3 style="color: #204a87;">Geometric</h3>
           <p style="color: #666; margin-top: 0.5rem;">Modern abstract stitched motifs</p>
         </a>
       </div>
     </section>
   </main>
-  
+
   <footer>
-    <p>&copy; {{ site.time | date: '%Y' }} Faux Embroidery Fabric | All rights reserved.</p>
+    <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
   </footer>
 </body>
 </html>
