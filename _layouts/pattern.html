@@ -29,25 +29,56 @@
     "name": "{{ page.title }}",
     "description": "{{ page.description }}",
     "image": "{{ site.url }}{{ site.baseurl }}/assets/images/{{ page.image }}",
-    "brand": {
-      "@type": "Brand",
-      "name": "Nick Panek Designs"
-    },
+    "brand": { "@type": "Brand", "name": "Nick Panek Designs" },
     "offers": {
       "@type": "Offer",
       "url": "{{ page.buy_url }}",
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock",
-      "seller": {
-        "@type": "Organization",
-        "name": "Spoonflower"
-      }
+      "seller": { "@type": "Organization", "name": "Spoonflower" }
     },
     "category": "Fabric",
     "material": "{{ page.material | default: 'Cotton' }}",
     "pattern": "{{ page.pattern_type | default: 'Embroidery' }}"
   }
   </script>
+
+  <!-- Page-specific tweaks -->
+  <style>
+    /* Dark red CTA button */
+    .buy-button{
+      display:inline-block;
+      padding:0.85rem 1.25rem;
+      background:#8b0000;        /* darkred */
+      color:#fff;
+      text-decoration:none;
+      border-radius:8px;
+      font-weight:700;
+      line-height:1;
+      border:2px solid #8b0000;
+      transition:transform .06s ease, background .15s ease, border-color .15s ease;
+    }
+    .buy-button:hover,
+    .buy-button:focus{
+      background:#6d0000;
+      border-color:#6d0000;
+      transform:translateY(-1px);
+    }
+
+    /* Remove bullets + fix weird cropping from markdown lists */
+    .pattern-page .additional-info ul{
+      list-style:none;       /* no bullets */
+      padding-left:0;        /* remove default indent */
+      margin:0 0 1rem 0;
+    }
+    .pattern-page .additional-info li{
+      margin:0 0 .6rem 0;
+      padding-left:0;
+    }
+
+    /* mobile spacing around tags/sections, just a bit tighter */
+    .pattern-details .tags{ margin: .75rem 0 1rem; }
+  </style>
 </head>
 <body>
   <header>
@@ -93,8 +124,9 @@
           {% endif %}
         </div>
 
+        <!-- Fixed CTA label (proper arrow) and consistent button class -->
         <a href="{{ page.buy_url }}" class="buy-button" target="_blank" rel="noopener">
-          View on Spoonflower â
+          View on Spoonflower →
         </a>
 
         {% if page.content != "" %}
