@@ -3,6 +3,7 @@ description: Handcrafted stitched-look fabric designs printed on demand through 
 url: https://nickpanek.github.io
 baseurl: /fauxembroideryfabric
 author: Nick Panek
+timezone: America/Chicago
 
 collections:
   patterns:
@@ -15,7 +16,7 @@ defaults:
       type: patterns
     values:
       layout: pattern
-      
+
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
