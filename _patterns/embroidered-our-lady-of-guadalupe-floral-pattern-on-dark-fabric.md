@@ -3,7 +3,6 @@ layout: pattern
 title: "Faux Embroidered Our Lady of Guadalupe Floral Pattern on Dark Fabric"
 description: "A richly detailed faux-embroidery pattern featuring Our Lady of Guadalupe surrounded by blooming florals in soft pink, coral and gold on a charcoal background."
 image: embroidered-our-lady-of-guadalupe-floral-pattern-on-dark-fabric-full.jpg
-thumb: embroidered-our-lady-of-guadalupe-floral-pattern-on-dark-fabric-thumb.jpg
 buy_url: "https://www.spoonflower.com/en/fabric/19464204?utm_source=fauxembroideryfabric"
 collection_slug: catholic
 collection_name: Catholic
