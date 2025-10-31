@@ -34,16 +34,16 @@ permalink: /collections/catholic/
     {% if items and items.size > 0 %}
       <div class="pattern-grid">
         {% for p in items %}
-        <a href="{{ p.url | relative_url }}" class="pattern-card">
-          <img
-            src="{{ site.baseurl }}/assets/images/{{ p.image }}"
-            alt="{{ p.title | escape }}"
-            loading="lazy"
-            width="300"
-            height="300">
-          <h3>{{ p.title }}</h3>
-          <p>{{ p.description }}</p>
-        </a>
+          <a href="{{ p.url | relative_url }}" class="pattern-card">
+            <img
+              src="{{ site.baseurl }}/assets/images/{{ p.image }}"
+              alt="{{ p.title | escape }}"
+              loading="lazy"
+              width="300"
+              height="300">
+            <h3>{{ p.title }}</h3>
+            <p>{{ p.description }}</p>
+          </a>
         {% endfor %}
       </div>
     {% else %}
