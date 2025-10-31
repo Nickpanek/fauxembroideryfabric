@@ -7,20 +7,20 @@
   <meta name="description" content="{{ page.description }}">
   <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
-  
+
   <!-- Open Graph -->
   <meta property="og:title" content="{{ page.title }}">
   <meta property="og:description" content="{{ page.description }}">
   <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ page.image }}">
   <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
   <meta property="og:type" content="product">
-  
+
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ page.title }}">
   <meta name="twitter:description" content="{{ page.description }}">
   <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ page.image }}">
-  
+
   <!-- JSON-LD Product Schema -->
   <script type="application/ld+json">
   {
@@ -55,23 +55,24 @@
       <a href="{{ site.baseurl }}/" class="logo">Faux Embroidery Fabric</a>
       <div class="nav-links">
         <a href="{{ site.baseurl }}/collections/florals">Florals</a>
+        <a href="{{ site.baseurl }}/collections/catholic">Catholic</a>
         <a href="{{ site.baseurl }}/collections/western">Western</a>
         <a href="{{ site.baseurl }}/collections/holiday">Holiday</a>
         <a href="{{ site.baseurl }}/collections/geometric">Geometric</a>
       </div>
     </nav>
   </header>
-  
+
   <main class="pattern-page">
     <div class="pattern-container">
       <div class="pattern-image">
         <img src="{{ site.baseurl }}/assets/images/{{ page.image }}" alt="{{ page.title }}" loading="lazy">
       </div>
-      
+
       <div class="pattern-details">
         <h1>{{ page.title }}</h1>
         <p class="description">{{ page.description }}</p>
-        
+
         {% if page.tags %}
         <div class="tags">
           {% for tag in page.tags %}
@@ -79,7 +80,7 @@
           {% endfor %}
         </div>
         {% endif %}
-        
+
         <div class="pattern-info">
           {% if page.color_palette %}
           <p><strong>Colors:</strong> {{ page.color_palette }}</p>
@@ -91,11 +92,11 @@
           <p><strong>Repeat:</strong> {{ page.repeat }}</p>
           {% endif %}
         </div>
-        
+
         <a href="{{ page.buy_url }}" class="buy-button" target="_blank" rel="noopener">
-          View on Spoonflower →
+          View on Spoonflower â
         </a>
-        
+
         {% if page.content != "" %}
         <div class="additional-info">
           {{ content }}
@@ -103,7 +104,7 @@
         {% endif %}
       </div>
     </div>
-    
+
     <!-- Related patterns -->
     <section class="related-patterns">
       <h2>You May Also Like</h2>
@@ -118,7 +119,7 @@
       </div>
     </section>
   </main>
-  
+
   <footer>
     <p>&copy; {{ site.time | date: '%Y' }} Faux Embroidery Fabric | All rights reserved.</p>
   </footer>
