@@ -1,6 +1,9 @@
 ---
 layout: null
+title: Floral Embroidery Patterns
+permalink: /collections/florals/
 ---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,15 +26,14 @@ layout: null
       </div>
     </nav>
   </header>
-  
+
   <main>
     <div class="collection-header">
       <h1>Floral Embroidery Patterns</h1>
       <p>Botanical and garden-inspired designs with the charm of hand-stitched embroidery</p>
     </div>
-    
+
     {% assign floral_patterns = site.patterns | where: 'collection_slug', 'florals' %}
-    
     {% if floral_patterns.size > 0 %}
     <div class="pattern-grid">
       {% for pattern in floral_patterns %}
@@ -52,7 +54,7 @@ layout: null
     </div>
     {% endif %}
   </main>
-  
+
   <footer>
     <p>&copy; {{ site.time | date: '%Y' }} Faux Embroidery Fabric | All rights reserved.</p>
   </footer>
