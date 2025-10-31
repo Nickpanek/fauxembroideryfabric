@@ -3,13 +3,12 @@ layout: null
 title: Western Collection
 permalink: /collections/western/
 ---
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Western Faux‑Embroidery Patterns | {{ site.title }}</title>
-  <meta name="description" content="Browse rustic and southwestern faux‑embroidery fabric designs.">
+  <title>Western Faux-Embroidery Patterns | {{ site.title }}</title>
+  <meta name="description" content="Rustic and southwestern faux-embroidery fabric designs.">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
@@ -18,10 +17,10 @@ permalink: /collections/western/
     <nav>
       <a href="{{ '/' | relative_url }}" class="logo">{{ site.title }}</a>
       <div class="nav-links">
-        <a href="{{ '/collections/florals' | relative_url }}">Florals</a>
-        <a href="{{ '/collections/catholic' | relative_url }}">Catholic</a>
-        <a href="{{ '/collections/western' | relative_url }}" class="active">Western</a>
-        <a href="{{ '/collections/holiday' | relative_url }}">Holiday</a>
+        <a href="{{ '/collections/florals'   | relative_url }}">Florals</a>
+        <a href="{{ '/collections/catholic'  | relative_url }}">Catholic</a>
+        <a href="{{ '/collections/western'   | relative_url }}" class="active">Western</a>
+        <a href="{{ '/collections/holiday'   | relative_url }}">Holiday</a>
         <a href="{{ '/collections/geometric' | relative_url }}">Geometric</a>
       </div>
     </nav>
@@ -34,7 +33,7 @@ permalink: /collections/western/
       <div class="pattern-grid">
         {% for p in items %}
           <a href="{{ p.url | relative_url }}" class="pattern-card">
-            <img src="{{ site.baseurl }}/assets/images/{{ p.image }}" alt="{{ p.title }}" loading="lazy" width="300" height="300">
+            <img src="{{ site.baseurl }}/assets/images/{{ p.image }}" alt="{{ p.title | escape }}" loading="lazy" width="300" height="300">
             <h3>{{ p.title }}</h3>
             <p>{{ p.description }}</p>
           </a>
@@ -46,7 +45,7 @@ permalink: /collections/western/
   </main>
 
   <footer>
-    <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
+    <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
   </footer>
 </body>
 </html>
