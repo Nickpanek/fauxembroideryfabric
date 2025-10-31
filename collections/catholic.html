@@ -36,7 +36,7 @@ permalink: /collections/catholic/
         {% for p in items %}
           <a href="{{ p.url | relative_url }}" class="pattern-card">
             <img
-              src="{{ '/assets/images/' | append: p.image | relative_url }}"
+              src="{{ site.baseurl }}/assets/images/{{ p.image }}"
               alt="{{ p.title | escape }}"
               loading="lazy"
               width="300"
