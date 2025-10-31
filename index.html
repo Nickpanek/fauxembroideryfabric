@@ -58,7 +58,7 @@ layout: null
         {% for p in items limit:12 %}
         <a href="{{ p.url | relative_url }}" class="pattern-card">
           <img
-            src="{{ (p.thumb | default: p.image) | relative_url }}"
+            src="{{ site.baseurl }}/assets/images/{{ p.image }}"
             alt="{{ p.title | escape }}"
             loading="lazy"
             width="300"
