@@ -29,12 +29,19 @@ permalink: /collections/catholic/
 
   <main>
     <h1 style="text-align:center;margin:2rem 0;">Catholic Collection</h1>
+
     {% assign items = site.patterns | where: 'collection_slug', 'catholic' | sort: 'lastmod' | reverse %}
     {% if items and items.size > 0 %}
       <div class="pattern-grid">
         {% for p in items %}
           <a href="{{ p.url | relative_url }}" class="pattern-card">
-            <img src="{{ site.baseurl }}/assets/images/{{ p.image }}" alt="{{ p.title | escape }}" loading="lazy" width="300" height="300">
+            <!-- Force images to come from /assets/images/ and include baseurl -->
+            <img
+              src="{{ '/assets/images/' | append: p.image | relative_url }}"
+              alt="{{ p.title | escape }}"
+              loading="lazy"
+              width="300"
+              height="300">
             <h3>{{ p.title }}</h3>
             <p>{{ p.description }}</p>
           </a>
