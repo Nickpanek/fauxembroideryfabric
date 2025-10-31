@@ -1,0 +1,26 @@
+title: Faux Embroidery Fabric
+description: Handcrafted stitched-look fabric designs printed on demand through Spoonflower
+url: https://nickpanek.github.io
+baseurl: /fauxembroideryfabric
+author: Nick Panek
+
+collections:
+  patterns:
+    output: true
+    permalink: /patterns/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: patterns
+    values:
+      layout: pattern
+      
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+exclude:
+  - README.md
+  - LICENSE
+  - .gitignore
