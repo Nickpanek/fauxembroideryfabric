@@ -110,7 +110,24 @@ layout: null
   </main>
 
   <footer>
-    <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
-  </footer>
+  <nav aria-label="Collections">
+    <div class="nav-links" style="justify-content:center; flex-wrap: wrap; gap: 1rem;">
+      <a href="{{ '/collections/florals'   | relative_url }}">Florals</a>
+      <a href="{{ '/collections/catholic'  | relative_url }}">Catholic</a>
+      <a href="{{ '/collections/western'   | relative_url }}">Western</a>
+      <a href="{{ '/collections/holiday'   | relative_url }}">Holiday</a>
+      <a href="{{ '/collections/geometric' | relative_url }}">Geometric</a>
+      <a href="{{ '/collections/psychedelic'  | relative_url }}">Psychedelic</a>
+      <a href="{{ '/collections/cryptid-ufo'  | relative_url }}">Cryptid &amp; UFOs</a>
+      <a href="{{ '/collections/animals-wildlife' | relative_url }}">Animals &amp; Wildlife</a>
+      <a href="{{ '/collections/cheater-quilts'   | relative_url }}">Cheater Quilts</a>
+    </div>
+  </nav>
+
+  <p style="text-align:center;margin-top:1rem;">
+    &copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.
+  </p>
+</footer>
+
 </body>
 </html>
