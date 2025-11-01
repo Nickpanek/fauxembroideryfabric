@@ -1,0 +1,39 @@
+---
+layout: null
+title: Animals & Wildlife Collection
+permalink: /collections/animals-wildlife/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <meta name="description" content="Faux-embroidery designs featuring animals, birds, and wildlife rendered in stitched detail.">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="{{ '/' | relative_url }}" class="logo">{{ site.title }}</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1 style="text-align:center;margin:2rem 0;">Animals & Wildlife Collection</h1>
+    {% assign items = site.patterns | where: "collection_slug", "animals-wildlife" | sort: "lastmod" | reverse %}
+    {% if items and items.size > 0 %}
+      <div class="pattern-grid">
+        {% for item in items %}
+          <article class="pattern-card">
+            <a href="{{ item.url | relative_url }}">
+              <img src="{{ item.image | relative_url }}" alt="{{ item.title }}">
+            </a>
+            <h2>{{ item.title }}</h2>
+          </article>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </main>
+</body>
+</html>
