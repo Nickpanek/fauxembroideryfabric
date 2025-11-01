@@ -2,8 +2,8 @@
 layout: pattern
 title: "Fabric in Faux Embroidery Cowboy Desert Scene Fabric"
 description: "Faux embroidery fabric showing a cowboy on horseback traveling across a textured desert landscape."
-image: faux-embroidery-cowboy-desert-scene-fabric-full.jpg
-thumb: faux-embroidery-cowboy-desert-scene-fabric-thumb.jpg
+image: assets/images/faux-embroidery-cowboy-desert-scene-fabric-full.jpg
+thumb: assets/images/faux-embroidery-cowboy-desert-scene-fabric-thumb.jpg
 buy_url: "https://www.spoonflower.com/en/fabric/19660307?utm_source=fauxembroideryfabric"
 collection_slug: western
 collection_name: Western
