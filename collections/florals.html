@@ -22,6 +22,10 @@ permalink: /collections/florals/
         <a href="{{ '/collections/western'   | relative_url }}">Western</a>
         <a href="{{ '/collections/holiday'   | relative_url }}">Holiday</a>
         <a href="{{ '/collections/geometric' | relative_url }}">Geometric</a>
+        <a href="{{ '/collections/psychedelic'  | relative_url }}">Psychedelic</a>
+        <a href="{{ '/collections/cryptid-ufo'  | relative_url }}">Cryptid &amp; UFOs</a>
+        <a href="{{ '/collections/animals-wildlife' | relative_url }}">Animals &amp; Wildlife</a>
+        <a href="{{ '/collections/cheater-quilts'   | relative_url }}">Cheater Quilts</a>
       </div>
     </nav>
   </header>
@@ -33,7 +37,7 @@ permalink: /collections/florals/
       <div class="pattern-grid">
         {% for p in items %}
           <a href="{{ p.url | relative_url }}" class="pattern-card">
-            <img src="{{ site.baseurl }}/assets/images/{{ p.image }}" alt="{{ p.title | escape }}" loading="lazy" width="300" height="300">
+            <img src="{{ site.baseurl }}/assets/images/{{ p.thumb | default: p.image }}" alt="{{ p.title | escape }}" loading="lazy" width="300" height="300">
             <h3>{{ p.title }}</h3>
             <p>{{ p.description }}</p>
           </a>
