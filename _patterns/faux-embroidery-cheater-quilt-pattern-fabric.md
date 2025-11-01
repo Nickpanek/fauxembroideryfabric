@@ -19,15 +19,15 @@ faq:
   - question: "How can I use faux embroidery fabrics?"
     answer: "Use them for quilts, pillows, or decorative panels to achieve a stitched look without the embroidery work."
 howto:
-  - step: "Cut and sew sections as desired for your project."
-  - step: "Press seams and edges to preserve the embroidered effect."
+  - step: "Cut and sew sections as desired."
+  - step: "Press seams to preserve the embroidered effect."
 ---
 
 This faux embroidery fabric features dozens of intricate stitched motifs arranged into patchwork squares. Each block resembles a tiny embroidered sampler, combining texture and color for an authentic handcrafted look.
 
 **Features**
-- Realistic faux embroidery texture  
-- Cheater quilt layout for easy sewing  
-- Bright, high-contrast color palette  
-- Ideal for quilting, crafts, and decor  
-- Coordinates with rustic and folk-art themes  
+- Realistic faux embroidery texture
+- Cheater quilt layout for easy sewing
+- Bright, high-contrast palette
+- Good for quilts, pillows, decor
+- Coordinates with rustic and folk-art themes
