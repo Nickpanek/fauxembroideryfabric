@@ -1,7 +1,7 @@
 ---
 layout: pattern
 title: "Fabric in Orange Cat Faux Embroidery Floral Fabric Panel"
-description: "Faux embroidery fabric with an orange tabby cat among pink and purple flowers on a soft green background."
+description: "Orange tabby faux embroidery with pink and purple flowers on a soft green background."
 image: orange-cat-faux-embroidery-floral-fabric-panel-full.jpg
 thumb: orange-cat-faux-embroidery-floral-fabric-panel-thumb.jpg
 buy_url: "https://www.spoonflower.com/en/fabric/19745078?utm_source=fauxembroideryfabric"
@@ -14,22 +14,23 @@ scale_hint: "Best at 75-100 percent scale"
 lastmod: 2025-10-31
 related: []
 faq:
-  - question: "What type of projects suit this cat panel?"
-    answer: "Ideal for wall art, pillow fronts, or quilt centerpieces."
-  - question: "Is the background printed or textured?"
-    answer: "It’s a printed design that imitates stitched embroidery."
-  - question: "Can the panel be resized?"
-    answer: "Yes, just email me."
+  - question: "What projects suit this cat panel?"
+    answer: "Use for pillow fronts, quilt centers, or framed textile art."
+  - question: "Is the texture raised?"
+    answer: "No. It prints flat while mimicking stitched embroidery."
+  - question: "Can I change the size?"
+    answer: "Yes. Adjust scale in Spoonflower before printing."
 howto:
-   - step: "Combine with coordinating green or floral fabrics for quilting."
-  - step: "Topstitch along flower outlines for realistic faux embroidery effect."
+  - step: "Center the panel and cut with a 1/2 in seam allowance."
+  - step: "Pair with coordinating green solids or small florals."
+  - step: "Topstitch along outlines to boost the faux stitch effect."
 ---
 
-This faux embroidery fabric depicts an orange tabby cat looking upward amid pink and purple blooms. The hand-stitched illusion adds depth and charm to any sewing project while keeping the flat printed ease of use.
+This faux embroidery fabric shows an orange tabby gazing upward amid pink and purple blooms on green. The print gives hand-stitched detail without the work.
 
 **Features**
-- Detailed faux embroidered cat and floral design  
-- Vibrant pink, purple, and green palette  
-- Perfect for panels, pillows, or framed textile art  
-- Realistic stitch effect for visual texture  
-- Printed cotton ideal for easy sewing and quilting  
+- Detailed faux embroidered cat and florals  
+- Pink, purple, and green palette  
+- Ideal for panels, pillows, and quilt focal blocks  
+- Realistic stitch illusion prints cleanly  
+- Works well on cotton for crisp edges  
