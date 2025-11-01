@@ -1,34 +1,35 @@
 ---
 layout: pattern
-title: "Wildflower Meadow Embroidery Pattern Hand Stitched Floral Design on Green"
-description: "A vibrant embroidery pattern bursting with white daisies, blue blossoms, and lush greenery on a rich green background."
-image: /assets/images/wildflower-meadow-embroidery-pattern-hand-stitched-floral-design-on-green-fabric-full.jpg
-thumb: /assets/images/wildflower-meadow-embroidery-pattern-hand-stitched-floral-design-on-green-fabric-thumb.jpg
-buy_url: "https://www.spoonflower.com/en/fabric/19465125?utm_source=fauxembroideryfabric"
-tags: [wildflower, meadow, hand, stitched, floral, green, embroidery, daisies, blossoms, greenery, cheerful]
+title: "Faux Embroidered Wildflower Meadow Pattern on Green Fabric"
+description: "A hand-stitched floral embroidery pattern depicting meadow wildflowers on a soft green ground."
+image: wildflower-meadow-embroidery-pattern-hand-stitched-floral-design-on-green-fabric-full.jpg
+buy_url: "https://www.spoonflower.com/en/fabric/00000000?utm_source=fauxembroideryfabric"
 collection_slug: florals
-collection_name: "Floral Collection"
+collection_name: Florals
+tags: [wildflower, meadow, floral, embroidery, green, stitched, hand-stitched, botanical, pattern]
+materials: cotton
+repeat_size: "6 in"
+scale_hint: "Best at 50–100% scale"
 lastmod: 2025-10-31
+related: []
 faq:
-  - q: What fabric type works best for this wildflower embroidery pattern?
-    a: Petal Signature Cotton offers a soft hand and crisp print quality for detailed faux embroidery fabric.
-  - q: Can I adjust the scale of this pattern?
-    a: Yes. Spoonflower lets you resize the repeat to suit home decor or apparel projects.
-  - q: Is this pattern seamless?
-    a: Yes, it’s designed with continuous edges for a smooth, repeating floral texture.
+  - question: "What inspired this wildflower embroidery design?"
+    answer: "Inspired by vintage embroidered linens featuring meadow florals and botanical motifs."
+  - question: "Is this design suitable for spring home décor?"
+    answer: "Yes. Works well for table linens, cushions, and curtains."
+  - question: "Can I adjust the color tone?"
+    answer: "Spoonflower allows custom scaling and tone adjustments."
 howto:
-  - step: Choose Petal Signature Cotton or Linen Cotton Canvas for best stitch detail.
-  - step: Order a swatch to preview color and scale before full yard purchase.
-  - step: Sew into table linens, cushion covers, or wall hangings to highlight the meadow motif.
+  - step: "Choose your preferred base such as Cotton Poplin."
+  - step: "Order a swatch to preview color accuracy."
+  - step: "Sew using matching thread to emphasize the stitched look."
 ---
 
-## Wildflower Meadow Embroidery Pattern Hand Stitched Floral Design on Green
+This faux embroidery floral pattern captures wild meadow blossoms rendered in digital stitch textures on a fresh green fabric ground. Ideal for spring crafts, apparel accents, and nature-inspired décor.
 
-A hand-stitched look brings this **faux embroidery fabric** to life, echoing the charm of wildflower meadows in full bloom. White daisies, soft blue blossoms, and vibrant greens create a rich tapestry against a deep green base. The stitches mimic traditional hand embroidery, giving a tactile, dimensional effect perfect for spring and summer decor.
+**Features:**
+- Faux embroidered stitch detail
+- Harmonious green and multicolor threads
+- Suitable for floral or botanical fabric projects  
 
-### Inspiration
-This design draws from nature walks and vintage garden samplers. The 8" repeat scale highlights each bloom’s texture and layered thread effect, balancing rhythm and realism.
-
----
-
-**Collection:** [Floral Collection](/collections/florals.html)
+[Buy on Spoonflower →]({{ page.buy_url }})
