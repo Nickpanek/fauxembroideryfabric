@@ -9,7 +9,7 @@ collection_slug: catholic
 collection_name: Catholic
 tags: [our, lady, guadalupe, detailed, featuring, surrounded, floral, accents, textured, background, 19686496]
 materials: cotton
-repeat_size: "6 in"
+repeat_size: "8 in"
 scale_hint: "Best at 50-100 percent scale"
 lastmod: 2025-11-01
 related: []
