@@ -4,7 +4,7 @@ title: "Fabric in Faux Embroidery Holiday Floral and Berries - Spoonflower"
 description: "Rich faux embroidery fabric featuring detailed holiday florals and red berries stitched in green, gold, and cream for festive quilting or decor."
 image: faux-embroidery-holiday-floral-and-berries-fabric-full.jpg
 thumb: faux-embroidery-holiday-floral-and-berries-fabric-thumb.jpg
-buy_url: "https://www.spoonflower.com/artists/designs/20578823?utm_source=fauxembroideryfabric"
+buy_url: "https://www.spoonflower.com/en/fabric/20578823-faux-embroidery-holiday-floral-and-berries-by-nickpanek?utm_source=fauxembroideryfabric"
 collection_slug: holiday
 collection_name: Holiday
 tags: [holiday, floral, berries, spoonflower, color, palette, symbolism, style, techniques, 20578823]
