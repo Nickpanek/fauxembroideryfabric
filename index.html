@@ -80,7 +80,7 @@ layout: null
       {% assign items = site.patterns | sort: 'lastmod' | reverse %}
       {% if items and items.size > 0 %}
       <div class="pattern-grid">
-        {% for p in items limit:88 %}
+        {% for p in items limit:99 %}
         <a href="{{ p.url | relative_url }}" class="pattern-card">
           <img
             src="{{ site.baseurl }}/assets/images/{{ p.image }}"
