@@ -162,10 +162,34 @@ footer p { color: var(--muted); font-size: .9rem; }
   .error-404 h1 { font-size: 4rem; }
   .hero h1 { font-size: 2rem; }
 }
+
+/* Mobile Navigation - Stack Vertically */
 @media (max-width: 480px) {
-  .nav-links { display: none; }
-  .pattern-grid { grid-template-columns: 1fr; }
-  .buy-button { width: 100%; text-align: center; }
+  nav { 
+    flex-direction: column; 
+    gap: 1rem; 
+  }
+  .logo { 
+    text-align: center; 
+  }
+  .nav-links { 
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    text-align: center;
+  }
+  .nav-links a { 
+    padding: 0.5rem 0; 
+    font-size: 0.9rem;
+  }
+  .pattern-grid { 
+    grid-template-columns: 1fr; 
+  }
+  .buy-button { 
+    width: 100%; 
+    text-align: center; 
+  }
 }
 
 /* Optional image skeleton. Add class="skeleton" to <img> to enable. */
@@ -177,6 +201,70 @@ footer p { color: var(--muted); font-size: .9rem; }
 @keyframes loading {
   0% { background-position: 200% 0; }
   100% { background-position: -200% 0; }
+}
+
+/* Dark Theme - Automatic based on OS setting */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e0e0e0;
+    --muted: #a0a0a0;
+    --bg: #1a1a1a;
+    --card: #2a2a2a;
+    --brand: #6b9bd1;
+    --brand-2: #5a8bc0;
+    --border: #404040;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.3);
+    --shadow-md: 0 2px 8px rgba(0,0,0,0.4);
+    --shadow-lg: 0 4px 16px rgba(0,0,0,0.5);
+  }
+  
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+  }
+  
+  header, footer {
+    background: var(--card);
+    border-color: var(--border);
+  }
+  
+  .hero, .pattern-card, .pattern-container, .collection-header, .error-404 {
+    background: var(--card);
+  }
+  
+  .pattern-card:hover {
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .pattern-card img {
+    background: #1a1a1a;
+  }
+  
+  .logo {
+    color: var(--ink);
+  }
+  
+  .nav-links a {
+    color: var(--brand);
+  }
+  
+  .nav-links a:hover {
+    color: #8bb3e3;
+  }
+  
+  .nav-links a.active {
+    color: var(--brand-2);
+  }
+  
+  .tag {
+    background: #3a3a3a;
+    color: var(--muted);
+  }
+  
+  .visually-hidden-focusable:focus {
+    background: var(--card);
+    border-color: var(--border);
+  }
 }
 
 /* Print */
