@@ -45,11 +45,10 @@
 
   <!-- Page-specific tweaks -->
   <style>
-    /* Dark red CTA button */
     .buy-button{
       display:inline-block;
       padding:0.85rem 1.25rem;
-      background:#8b0000;        /* darkred */
+      background:#8b0000;
       color:#fff;
       text-decoration:none;
       border-radius:8px;
@@ -64,36 +63,34 @@
       border-color:#6d0000;
       transform:translateY(-1px);
     }
-
-    /* Thumbnail image bullets made from this pattern's main image */
     .pattern-page .additional-info ul{
-      list-style:none;          /* remove default bullets */
-      padding-left:0;           /* reset */
+      list-style:none;
+      padding-left:0;
       margin:0 0 1rem 0;
     }
     .pattern-page .additional-info li{
       position:relative;
-      padding-left:34px;        /* room for the thumbnail */
+      padding-left:34px;
       margin:0 0 .65rem 0;
     }
     .pattern-page .additional-info li::before{
       content:"";
       position:absolute;
       left:0;
-      top:0.15rem;              /* vertical align to first line */
+      top:0.15rem;
       width:22px;
       height:22px;
       background-image:url('{{ site.baseurl }}/assets/images/{{ page.image }}');
-      background-size:cover;    /* mini thumbnail */
+      background-size:cover;
       background-position:center;
-      border-radius:4px;        /* set to 50% for circular dots */
+      border-radius:4px;
       box-shadow:0 0 0 1px rgba(0,0,0,.08);
       image-rendering:auto;
     }
-
-    /* mobile spacing around tags/sections */
-    .pattern-details .tags{ margin: .75rem 0 1rem; }
+    .pattern-details .tags{ margin:.75rem 0 1rem; }
   </style>
+
+  {% include analytics.html %}
 </head>
 <body>
   <header>
@@ -139,7 +136,6 @@
           {% endif %}
         </div>
 
-        <!-- CTA -->
         <a href="{{ page.buy_url }}" class="buy-button" target="_blank" rel="noopener">
           View on Spoonflower →
         </a>
@@ -152,7 +148,6 @@
       </div>
     </div>
 
-    <!-- Related patterns -->
     <section class="related-patterns">
       <h2>You May Also Like</h2>
       <div class="pattern-grid">
