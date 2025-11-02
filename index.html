@@ -48,7 +48,7 @@ layout: null
   <header role="banner">
   <nav aria-label="Primary">
     <a href="{{ '/' | relative_url }}" class="logo">{{ site.title }}</a>
-    <a href="#browse-collections" class="mobile-collections-btn">Browse Collections ↓</a>
+    <a href="#footer" class="mobile-collections-btn">Browse Collections ↓</a>
     <div class="nav-links">
       <a href="{{ '/collections/florals'   | relative_url }}">Florals</a>
       <a href="{{ '/collections/catholic'  | relative_url }}">Catholic</a>
@@ -107,36 +107,9 @@ layout: null
       </div>
       {% endif %}
     </section>
-
-    <!-- Browse by Collection -->
-    <section id="browse-collections" style="margin-top:3rem;" aria-labelledby="browse-title">
-      <h2 id="browse-title" style="font-size:1.8rem;margin-bottom:1.5rem;text-align:center;">Browse by Collection</h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;">
-        <a href="{{ '/collections/florals'   | relative_url }}"   style="padding:2rem;background:white;border-radius:8px;text-align:center;text-decoration:none;color:#333;box-shadow:0 2px 8px rgba(0,0,0,0.1);" aria-label="View Florals collection">
-          <h3 style="color:#204a87;">Florals</h3>
-          <p style="color:#666;margin-top:0.5rem;">Botanical and garden-inspired embroidery</p>
-        </a>
-        <a href="{{ '/collections/catholic'  | relative_url }}"   style="padding:2rem;background:white;border-radius:8px;text-align:center;text-decoration:none;color:#333;box-shadow:0 2px 8px rgba(0,0,0,0.1);" aria-label="View Catholic collection">
-          <h3 style="color:#204a87;">Catholic</h3>
-          <p style="color:#666;margin-top:0.5rem;">Devotional and saint-inspired faux embroidery</p>
-        </a>
-        <a href="{{ '/collections/western'   | relative_url }}"   style="padding:2rem;background:white;border-radius:8px;text-align:center;text-decoration:none;color:#333;box-shadow:0 2px 8px rgba(0,0,0,0.1);" aria-label="View Western collection">
-          <h3 style="color:#204a87;">Western</h3>
-          <p style="color:#666;margin-top:0.5rem;">Rustic and southwestern stitched designs</p>
-        </a>
-        <a href="{{ '/collections/holiday'   | relative_url }}"   style="padding:2rem;background:white;border-radius:8px;text-align:center;text-decoration:none;color:#333;box-shadow:0 2px 8px rgba(0,0,0,0.1);" aria-label="View Holiday collection">
-          <h3 style="color:#204a87;">Holiday</h3>
-          <p style="color:#666;margin-top:0.5rem;">Seasonal and festive embroidery patterns</p>
-        </a>
-        <a href="{{ '/collections/geometric' | relative_url }}"   style="padding:2rem;background:white;border-radius:8px;text-align:center;text-decoration:none;color:#333;box-shadow:0 2px 8px rgba(0,0,0,0.1);" aria-label="View Geometric collection">
-          <h3 style="color:#204a87;">Geometric</h3>
-          <p style="color:#666;margin-top:0.5rem;">Modern abstract stitched motifs</p>
-        </a>
-      </div>
-    </section>
   </main>
 
-  <footer>
+  <footer id="footer">
   <nav aria-label="Collections">
     <div class="nav-links" style="justify-content:center; flex-wrap: wrap; gap: 1rem;">
       <a href="{{ '/collections/florals'   | relative_url }}">Florals</a>
@@ -160,7 +133,7 @@ layout: null
   // Smooth scroll for mobile collections button
   document.querySelector('.mobile-collections-btn')?.addEventListener('click', function(e) {
     e.preventDefault();
-    document.getElementById('browse-collections').scrollIntoView({ 
+    document.getElementById('footer').scrollIntoView({ 
       behavior: 'smooth',
       block: 'start'
     });
