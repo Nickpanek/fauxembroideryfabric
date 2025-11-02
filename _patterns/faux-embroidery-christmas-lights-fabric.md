@@ -4,7 +4,7 @@ title: "Fabric in Faux Embroidery Christmas Lights"
 description: "A vibrant faux embroidery fabric featuring red, green, blue, and gold holiday lights stitched on a deep black background for festive contrast."
 image: faux-embroidery-christmas-lights-spoonflower-fabric-full.jpg
 thumb: faux-embroidery-christmas-lights-fabric-thumb.jpg
-buy_url: "https://www.spoonflower.com/artists/designs/20578375?utm_source=fauxembroideryfabric"
+buy_url: "https://www.spoonflower.com/en/fabric/20578375-faux-embroidery-christmas-lights-by-nickpanek?utm_source=fauxembroideryfabric"
 collection_slug: holiday
 collection_name: Holiday
 tags: [christmas, lights, embroidery, faux, festive, colorful, black, holiday, textile, 20578375, faux embroidery]
