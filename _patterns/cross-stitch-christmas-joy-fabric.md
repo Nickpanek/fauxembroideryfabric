@@ -4,7 +4,7 @@ title: "Fabric in Faux Cross Stitch Christmas Joy Pattern with Holly and Berries
 description: "A festive faux embroidery fabric featuring the word JOY in green cross-stitch with holly leaves and red berries framed in traditional borders."
 image: faux-cross-stitch-christmas-joy-pattern-with-holly-and-berries-spoonflower-fabric-full.jpg
 thumb: cross-stitch-christmas-joy-fabric-thumb.jpg
-buy_url: "https://www.spoonflower.com/artists/designs/20578374?utm_source=fauxembroideryfabric"
+buy_url: "https://www.spoonflower.com/en/fabric/20578374-faux-cross-stitch-christmas-joy-pattern-with-holly-and-berries-by-nickpanek?utm_source=fauxembroideryfabric"
 collection_slug: holiday
 collection_name: Holiday
 tags: [cross, stitch, christmas, joy, holly, berries, faux, embroidery, holiday, 20578374]
