@@ -4,7 +4,7 @@ title: "Faux Embroidery Western Cowgirl Desert Scene Fabric"
 description: "Faux embroidery fabric featuring a stitched silhouette of a cowgirl walking through a desert with cacti, mesas, and old Western buildings."
 image: faux-embroidery-western-cowgirl-desert-scene-fabric-full.jpg
 thumb: faux-embroidery-western-cowgirl-desert-scene-fabric-thumb.jpg
-buy_url: "https://www.spoonflower.com/artists/designs/20600089?utm_source=fauxembroideryfabric"
+buy_url: "https://www.spoonflower.com/en/fabric/20600089-faux-embroidery-western-cowgirl-desert-scene-pattern-in-stitched-style-by-nickpanek?utm_
 collection_slug: western
 collection_name: Western
 tags: [western, cowgirl, desert, stitched, embroidery, landscape, fabric, cowboy, vintage, scene]
