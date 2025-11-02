@@ -18,10 +18,6 @@ faq:
     answer: "The dove symbolizes the Holy Spirit, a traditional Christian emblem of peace and divine presence."
   - question: "What printing scale highlights the stitch details best?"
     answer: "this looks best up to 12", message the seller for size requests, his email is on the profile."
-howto:
-  - step: "Select cotton or linen for the most authentic embroidery texture."
-  - step: "Center the dove motif when sewing altar cloths or wall hangings."
-  - step: "Pair with gold or deep blue trims for a liturgical finish."
 ---
 
 This faux embroidery fabric captures a detailed depiction of the Holy Spirit as a radiant dove surrounded by stylized flowers and vines. The design combines spiritual symbolism with the tactile illusion of hand stitching.
