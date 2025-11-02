@@ -4,7 +4,7 @@ title: "Fabric in Faux Embroidery Red and White Damask - Spoonflower"
 description: "Faux embroidery fabric design with ornate red and white damask threadwork on black, perfect for elegant decor and upholstery."
 image: faux-embroidery-red-and-white-damask-spoonflower-fabric-full.jpg
 thumb: faux-embroidery-red-and-white-damask-fabric-thumb.jpg
-buy_url: "https://www.spoonflower.com/artists/designs/20578824?utm_source=fauxembroideryfabric"
+buy_url: "https://www.spoonflower.com/en/fabric/20578824-faux-embroidery-red-and-white-damask-by-nickpanek?utm_source=fauxembroideryfabric"
 collection_slug: geometric
 collection_name: Geometric
 tags: [red, white, damask, embroidery, baroque, ornate, faux, textile, spoonflower, elegant]
