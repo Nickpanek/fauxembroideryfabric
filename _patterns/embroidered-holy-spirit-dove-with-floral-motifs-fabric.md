@@ -17,7 +17,7 @@ faq:
   - question: "What does the dove represent in this faux embroidery fabric?"
     answer: "The dove symbolizes the Holy Spirit, a traditional Christian emblem of peace and divine presence."
   - question: "What printing scale highlights the stitch details best?"
-    answer: "this looks best up to 12", message the seller for size requests, his email is on the profile."
+    answer: "this looks best up to 12 inch, message the seller for size requests, his email is on the profile."
 ---
 
 This faux embroidery fabric captures a detailed depiction of the Holy Spirit as a radiant dove surrounded by stylized flowers and vines. The design combines spiritual symbolism with the tactile illusion of hand stitching.
