@@ -8,6 +8,7 @@ import Button from '../ui/Button.js';
 
 export default class MenuScene extends Scene {
   create() {
+    console.log('MenuScene: create() called');
     this.title = 'The Fighting Lambs of Threadland';
 
     // World buttons
@@ -39,18 +40,24 @@ export default class MenuScene extends Scene {
 
       button.setEnabled(world.unlocked);
       this.buttons.push(button);
+      console.log(`MenuScene: Created button "${world.name}" at (${button.x}, ${button.y}) size ${button.width}x${button.height}`);
     }
 
     // Setup input handlers
     this.input.on('pointerdown', (pointer) => {
+      console.log(`MenuScene: pointerdown at (${pointer.x}, ${pointer.y})`);
       for (const button of this.buttons) {
         button.handlePointerDown(pointer.x, pointer.y);
       }
     });
 
     this.input.on('pointerup', (pointer) => {
+      console.log(`MenuScene: pointerup at (${pointer.x}, ${pointer.y})`);
       for (const button of this.buttons) {
-        button.handlePointerUp(pointer.x, pointer.y);
+        const result = button.handlePointerUp(pointer.x, pointer.y);
+        if (result) {
+          console.log(`MenuScene: Button "${button.text}" clicked!`);
+        }
       }
     });
 
@@ -59,9 +66,12 @@ export default class MenuScene extends Scene {
         button.handlePointerMove(pointer.x, pointer.y);
       }
     });
+
+    console.log(`MenuScene: Setup complete, ${this.buttons.length} buttons created`);
   }
 
   startGame(worldId) {
+    console.log(`MenuScene: startGame() called with world: ${worldId}`);
     this.switchToScene('game', { world: worldId });
   }
 

@@ -16,24 +16,39 @@ export default class GameScene extends Scene {
   async init(data) {
     super.init(data);
     this.world = data.world || 'prairie';
+    console.log(`GameScene: init() called with world: ${this.world}`);
   }
 
   async preload() {
-    // Load game data
-    const [towersData, enemiesData, wavesData, combosData] = await Promise.all([
-      fetch('data/towers.json').then(r => r.json()),
-      fetch('data/enemies.json').then(r => r.json()),
-      fetch('data/waves.json').then(r => r.json()),
-      fetch('data/combos.json').then(r => r.json())
-    ]);
+    console.log('GameScene: preload() starting...');
+    try {
+      // Load game data
+      const [towersData, enemiesData, wavesData, combosData] = await Promise.all([
+        fetch('data/towers.json').then(r => r.json()),
+        fetch('data/enemies.json').then(r => r.json()),
+        fetch('data/waves.json').then(r => r.json()),
+        fetch('data/combos.json').then(r => r.json())
+      ]);
 
-    this.towersData = towersData;
-    this.enemiesData = enemiesData;
-    this.wavesData = wavesData[this.world];
-    this.combosData = combosData;
+      this.towersData = towersData;
+      this.enemiesData = enemiesData;
+      this.wavesData = wavesData[this.world];
+      this.combosData = combosData;
+
+      console.log('GameScene: preload() complete - data loaded successfully');
+      console.log(`  - Towers: ${Object.keys(towersData).length}`);
+      console.log(`  - Enemies: ${Object.keys(enemiesData).length}`);
+      console.log(`  - Waves for ${this.world}: ${this.wavesData.waves.length}`);
+      console.log(`  - Combos: ${combosData.length}`);
+    } catch (error) {
+      console.error('GameScene: preload() FAILED:', error);
+      throw error;
+    }
   }
 
   create() {
+    console.log('GameScene: create() starting...');
+
     // Initialize systems
     this.pathSystem = new PathSystem();
     this.comboSystem = new ComboSystem(this.combosData);
@@ -80,6 +95,8 @@ export default class GameScene extends Scene {
 
     // Start first wave after delay
     setTimeout(() => this.startNextWave(), 1000);
+
+    console.log('GameScene: create() complete');
   }
 
   setupInput() {
