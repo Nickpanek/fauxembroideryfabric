@@ -171,6 +171,10 @@ export default class GameScene extends Scene {
       return;
     }
 
+    // Immediately mark wave as in progress and hide button to prevent double-clicks
+    this.waveInProgress = true;
+    this.readyButton.setVisible(false);
+
     // Show transition
     this.launchScene('transition', {
       world: this.world,
