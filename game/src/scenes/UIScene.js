@@ -21,9 +21,20 @@ export default class UIScene extends Scene {
 
     if (!this.gameScene) {
       console.error('UIScene requires GameScene to be active');
+      // Retry after a short delay
+      setTimeout(() => {
+        this.gameScene = this.game.getScene('game');
+        if (this.gameScene) {
+          this.initializeUI();
+        }
+      }, 100);
       return;
     }
 
+    this.initializeUI();
+  }
+
+  initializeUI() {
     // Create UI components
     this.hud = new HUD(this.width, this.height);
     this.towerTray = new TowerTray(this.width, this.height, this.towersData);
