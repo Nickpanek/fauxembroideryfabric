@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Threadland - File Test</title>
+  <style>
+    body {
+      font-family: monospace;
+      padding: 20px;
+      background: #1a1a2e;
+      color: #fff;
+    }
+    .test-item {
+      padding: 8px;
+      margin: 4px 0;
+      border-radius: 4px;
+    }
+    .success { background: #4caf50; }
+    .error { background: #f44336; }
+    .pending { background: #666; }
+  </style>
+</head>
+<body>
+  <h1>🧵 Threadland File Test</h1>
+  <p>Testing if all required files are accessible...</p>
+  <div id="results"></div>
+
+  <script>
+    const files = [
+      { name: 'Main Script', url: '../src/main.js' },
+      { name: 'Towers Data', url: 'data/towers.json' },
+      { name: 'Enemies Data', url: 'data/enemies.json' },
+      { name: 'Waves Data', url: 'data/waves.json' },
+      { name: 'Combos Data', url: 'data/combos.json' },
+      { name: 'Tower Sprite', url: 'assets/sprites/towers/tower-pinLauncher.png' },
+      { name: 'Enemy Sprite', url: 'assets/sprites/enemies/enemy-wolf.png' },
+      { name: 'Interstitial', url: 'assets/interstitials/prairie.webp' },
+    ];
+
+    const resultsDiv = document.getElementById('results');
+
+    async function testFile(file) {
+      const div = document.createElement('div');
+      div.className = 'test-item pending';
+      div.textContent = `Testing ${file.name}...`;
+      resultsDiv.appendChild(div);
+
+      try {
+        const response = await fetch(file.url);
+        if (response.ok) {
+          div.className = 'test-item success';
+          div.textContent = `✓ ${file.name} - OK (${response.status})`;
+          return true;
+        } else {
+          div.className = 'test-item error';
+          div.textContent = `✗ ${file.name} - FAILED (${response.status} ${response.statusText})`;
+          return false;
+        }
+      } catch (error) {
+        div.className = 'test-item error';
+        div.textContent = `✗ ${file.name} - ERROR: ${error.message}`;
+        return false;
+      }
+    }
+
+    async function runTests() {
+      console.log('Starting file tests...');
+      let passCount = 0;
+
+      for (const file of files) {
+        const passed = await testFile(file);
+        if (passed) passCount++;
+      }
+
+      const summary = document.createElement('div');
+      summary.style.marginTop = '20px';
+      summary.style.padding = '16px';
+      summary.style.background = passCount === files.length ? '#4caf50' : '#f44336';
+      summary.style.borderRadius = '4px';
+      summary.style.fontWeight = 'bold';
+      summary.textContent = `Results: ${passCount}/${files.length} files accessible`;
+      resultsDiv.appendChild(summary);
+
+      console.log(`File test complete: ${passCount}/${files.length} passed`);
+    }
+
+    runTests();
+  </script>
+</body>
+</html>

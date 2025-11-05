@@ -176,17 +176,37 @@
     <div class="world-art right"></div>
   </div>
 
+  <!-- Version check -->
+  <script>
+    console.log('%c🧵 Threadland v1.0.1 - DEBUG VERSION', 'background: #4a90e2; color: white; padding: 4px 8px; font-weight: bold;');
+    console.log('If you see this message, the HTML file loaded correctly.');
+    console.log('Expected to see MenuScene logs when game starts...');
+  </script>
+
   <!-- Main game script (ES6 module) -->
-  <script type="module" src="../src/main.js"></script>
+  <script type="module" src="../src/main.js?v=1.0.1"></script>
 
   <!-- PWA Service Worker -->
   <script>
+    // Unregister old service workers first for clean slate
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(registrations => {
+        for (let registration of registrations) {
+          registration.unregister().then(success => {
+            if (success) console.log('Old service worker unregistered');
+          });
+        }
+      });
+    }
+
     // Register service worker
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('sw.js')
           .then(registration => {
             console.log('ServiceWorker registered:', registration.scope);
+            // Force update check
+            registration.update();
           })
           .catch(err => {
             console.log('ServiceWorker registration failed:', err);
