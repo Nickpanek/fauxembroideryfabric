@@ -1,0 +1,58 @@
+{
+  "needleburst": {
+    "id": "needleburst",
+    "name": "Needleburst",
+    "description": "Pin Launcher + Button Mortar combo increases fire rate",
+    "towers": ["pinLauncher", "buttonMortar"],
+    "bonus": {
+      "fireRateMultiplier": 1.3,
+      "damageBonus": 5
+    },
+    "radius": 60
+  },
+  "skyStitcher": {
+    "id": "skyStitcher",
+    "name": "Sky Stitcher",
+    "description": "Button Mortar + Spindle Ward combo targets air with splash",
+    "towers": ["buttonMortar", "spindleWard"],
+    "bonus": {
+      "rangeBonus": 30,
+      "splashRadiusBonus": 20,
+      "canTargetAir": true
+    },
+    "radius": 60
+  },
+  "guardianLoom": {
+    "id": "guardianLoom",
+    "name": "Guardian Loom",
+    "description": "Wool Cannon + Patch Totem combo increases damage and durability",
+    "towers": ["woolCannon", "patchTotem"],
+    "bonus": {
+      "damageMultiplier": 1.5,
+      "armorBonus": 10
+    },
+    "radius": 60
+  },
+  "threadDefense": {
+    "id": "threadDefense",
+    "name": "Thread Defense",
+    "description": "Pin Launcher + Spindle Ward combo covers ground and air effectively",
+    "towers": ["pinLauncher", "spindleWard"],
+    "bonus": {
+      "fireRateMultiplier": 1.2,
+      "rangeBonus": 20
+    },
+    "radius": 60
+  },
+  "wovenWall": {
+    "id": "wovenWall",
+    "name": "Woven Wall",
+    "description": "Patch Totem + Button Mortar combo creates strong area control",
+    "towers": ["patchTotem", "buttonMortar"],
+    "bonus": {
+      "splashRadiusBonus": 30,
+      "fireRateMultiplier": 1.25
+    },
+    "radius": 60
+  }
+}

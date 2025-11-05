@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="description" content="The Fighting Lambs of Threadland - A mobile-first tower defense game">
+  <meta name="theme-color" content="#1a1a2e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Threadland">
+
+  <title>The Fighting Lambs of Threadland</title>
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/icon-180.png">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #1a1a2e;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    #game-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    /* Desktop: Side panels with world art */
+    @media (min-width: 768px) {
+      #game-container {
+        background: #000;
+      }
+
+      .world-art {
+        flex: 1;
+        background: url('assets/interstitials/prairie.webp') center/cover no-repeat;
+        opacity: 0.25;
+        height: 100%;
+        pointer-events: none;
+      }
+
+      .world-art.left {
+        order: 1;
+      }
+
+      canvas {
+        order: 2;
+      }
+
+      .world-art.right {
+        order: 3;
+      }
+    }
+
+    canvas {
+      display: block;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+      touch-action: none;
+    }
+
+    /* Loading screen */
+    #loading {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #1a1a2e;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 20px;
+      z-index: 1000;
+      transition: opacity 0.5s;
+    }
+
+    #loading.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-top-color: #4a90e2;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Install prompt */
+    #install-prompt {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #4a90e2;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      display: none;
+      z-index: 1001;
+      font-size: 14px;
+    }
+
+    #install-prompt.show {
+      display: block;
+    }
+
+    #install-prompt button {
+      background: white;
+      color: #4a90e2;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      margin-left: 12px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #install-prompt button.dismiss {
+      background: transparent;
+      color: white;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading screen -->
+  <div id="loading">
+    <div class="spinner"></div>
+    <div>Loading Threadland...</div>
+  </div>
+
+  <!-- Install prompt -->
+  <div id="install-prompt">
+    <span>Install Threadland for offline play!</span>
+    <button id="install-button">Install</button>
+    <button class="dismiss" id="dismiss-button">Later</button>
+  </div>
+
+  <!-- Game container -->
+  <div id="game-container">
+    <div class="world-art left"></div>
+    <canvas id="game-canvas"></canvas>
+    <div class="world-art right"></div>
+  </div>
+
+  <!-- Main game script (ES6 module) -->
+  <script type="module" src="../src/main.js"></script>
+
+  <!-- PWA Service Worker -->
+  <script>
+    // Register service worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .then(registration => {
+            console.log('ServiceWorker registered:', registration.scope);
+          })
+          .catch(err => {
+            console.log('ServiceWorker registration failed:', err);
+          });
+      });
+    }
+
+    // PWA Install prompt
+    let deferredPrompt;
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+
+      // Show install prompt after 5 seconds
+      setTimeout(() => {
+        const installPrompt = document.getElementById('install-prompt');
+        installPrompt.classList.add('show');
+      }, 5000);
+    });
+
+    document.getElementById('install-button').addEventListener('click', async () => {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        console.log(`User response: ${outcome}`);
+        deferredPrompt = null;
+      }
+
+      document.getElementById('install-prompt').classList.remove('show');
+    });
+
+    document.getElementById('dismiss-button').addEventListener('click', () => {
+      document.getElementById('install-prompt').classList.remove('show');
+    });
+
+    // Hide loading screen when game starts
+    window.addEventListener('gameReady', () => {
+      document.getElementById('loading').classList.add('hidden');
+    });
+
+    // Lock orientation to portrait on mobile
+    if (screen.orientation && screen.orientation.lock) {
+      screen.orientation.lock('portrait').catch(err => {
+        console.log('Orientation lock not supported:', err);
+      });
+    }
+
+    // Prevent double-tap zoom
+    let lastTouchEnd = 0;
+    document.addEventListener('touchend', (e) => {
+      const now = Date.now();
+      if (now - lastTouchEnd <= 300) {
+        e.preventDefault();
+      }
+      lastTouchEnd = now;
+    }, false);
+
+    // Prevent pinch zoom
+    document.addEventListener('gesturestart', (e) => {
+      e.preventDefault();
+    });
+
+    document.addEventListener('gesturechange', (e) => {
+      e.preventDefault();
+    });
+
+    document.addEventListener('gestureend', (e) => {
+      e.preventDefault();
+    });
+  </script>
+</body>
+</html>
