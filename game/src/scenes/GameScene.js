@@ -21,10 +21,10 @@ export default class GameScene extends Scene {
   async preload() {
     // Load game data
     const [towersData, enemiesData, wavesData, combosData] = await Promise.all([
-      fetch('src/data/towers.json').then(r => r.json()),
-      fetch('src/data/enemies.json').then(r => r.json()),
-      fetch('src/data/waves.json').then(r => r.json()),
-      fetch('src/data/combos.json').then(r => r.json())
+      fetch('data/towers.json').then(r => r.json()),
+      fetch('data/enemies.json').then(r => r.json()),
+      fetch('data/waves.json').then(r => r.json()),
+      fetch('data/combos.json').then(r => r.json())
     ]);
 
     this.towersData = towersData;
