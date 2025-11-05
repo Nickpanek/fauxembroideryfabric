@@ -3,8 +3,8 @@
  * Caches game assets for PWA functionality
  */
 
-const CACHE_NAME = 'threadland-v1.0.1';
-const RUNTIME_CACHE = 'threadland-runtime-v1.0.1';
+const CACHE_NAME = 'threadland-v1.0.2';
+const RUNTIME_CACHE = 'threadland-runtime-v1.0.2';
 
 // Files to cache on install
 const STATIC_ASSETS = [

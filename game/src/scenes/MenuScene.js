@@ -44,14 +44,15 @@ export default class MenuScene extends Scene {
     }
 
     // Setup input handlers
-    this.input.on('pointerdown', (pointer) => {
+    // Store bound handlers for proper cleanup
+    this.boundHandlePointerDown = (pointer) => {
       console.log(`MenuScene: pointerdown at (${pointer.x}, ${pointer.y})`);
       for (const button of this.buttons) {
         button.handlePointerDown(pointer.x, pointer.y);
       }
-    });
+    };
 
-    this.input.on('pointerup', (pointer) => {
+    this.boundHandlePointerUp = (pointer) => {
       console.log(`MenuScene: pointerup at (${pointer.x}, ${pointer.y})`);
       for (const button of this.buttons) {
         const result = button.handlePointerUp(pointer.x, pointer.y);
@@ -59,13 +60,17 @@ export default class MenuScene extends Scene {
           console.log(`MenuScene: Button "${button.text}" clicked!`);
         }
       }
-    });
+    };
 
-    this.input.on('pointermove', (pointer) => {
+    this.boundHandlePointerMove = (pointer) => {
       for (const button of this.buttons) {
         button.handlePointerMove(pointer.x, pointer.y);
       }
-    });
+    };
+
+    this.input.on('pointerdown', this.boundHandlePointerDown);
+    this.input.on('pointerup', this.boundHandlePointerUp);
+    this.input.on('pointermove', this.boundHandlePointerMove);
 
     console.log(`MenuScene: Setup complete, ${this.buttons.length} buttons created`);
   }
@@ -130,8 +135,8 @@ export default class MenuScene extends Scene {
 
   shutdown() {
     // Clean up input listeners
-    this.input.off('pointerdown');
-    this.input.off('pointerup');
-    this.input.off('pointermove');
+    this.input.off('pointerdown', this.boundHandlePointerDown);
+    this.input.off('pointerup', this.boundHandlePointerUp);
+    this.input.off('pointermove', this.boundHandlePointerMove);
   }
 }

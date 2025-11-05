@@ -56,17 +56,22 @@ export default class UIScene extends Scene {
   }
 
   setupInput() {
-    this.input.on('pointerdown', (pointer) => {
+    // Store bound handlers for proper cleanup
+    this.boundHandlePointerDown = (pointer) => {
       this.handlePointerDown(pointer.x, pointer.y);
-    });
+    };
 
-    this.input.on('pointerup', (pointer) => {
+    this.boundHandlePointerUp = (pointer) => {
       this.handlePointerUp(pointer.x, pointer.y);
-    });
+    };
 
-    this.input.on('pointermove', (pointer) => {
+    this.boundHandlePointerMove = (pointer) => {
       this.handlePointerMove(pointer.x, pointer.y);
-    });
+    };
+
+    this.input.on('pointerdown', this.boundHandlePointerDown);
+    this.input.on('pointerup', this.boundHandlePointerUp);
+    this.input.on('pointermove', this.boundHandlePointerMove);
   }
 
   handlePointerDown(x, y) {
@@ -168,8 +173,8 @@ export default class UIScene extends Scene {
   }
 
   shutdown() {
-    this.input.off('pointerdown');
-    this.input.off('pointerup');
-    this.input.off('pointermove');
+    this.input.off('pointerdown', this.boundHandlePointerDown);
+    this.input.off('pointerup', this.boundHandlePointerUp);
+    this.input.off('pointermove', this.boundHandlePointerMove);
   }
 }
