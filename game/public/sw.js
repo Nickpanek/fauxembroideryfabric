@@ -3,8 +3,8 @@
  * Caches game assets for PWA functionality
  */
 
-const CACHE_NAME = 'threadland-v1.0.0';
-const RUNTIME_CACHE = 'threadland-runtime-v1';
+const CACHE_NAME = 'threadland-v1.0.1';
+const RUNTIME_CACHE = 'threadland-runtime-v1.0.1';
 
 // Files to cache on install
 const STATIC_ASSETS = [
@@ -45,10 +45,10 @@ const STATIC_ASSETS = [
   '/src/ui/TowerPanel.js',
 
   // Data
-  '/src/data/towers.json',
-  '/src/data/enemies.json',
-  '/src/data/waves.json',
-  '/src/data/combos.json'
+  '/data/towers.json',
+  '/data/enemies.json',
+  '/data/waves.json',
+  '/data/combos.json'
 ];
 
 // Install event - cache static assets

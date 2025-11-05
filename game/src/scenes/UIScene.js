@@ -11,7 +11,7 @@ import TowerPanel from '../ui/TowerPanel.js';
 export default class UIScene extends Scene {
   async preload() {
     // Load tower data for UI
-    const towersData = await fetch('src/data/towers.json').then(r => r.json());
+    const towersData = await fetch('data/towers.json').then(r => r.json());
     this.towersData = towersData;
   }
 

@@ -1,0 +1,147 @@
+{
+  "pinLauncher": {
+    "id": "pinLauncher",
+    "name": "Pin Launcher",
+    "description": "Basic fast shooter with good range",
+    "cost": 100,
+    "damage": 10,
+    "fireRate": 0.5,
+    "range": 150,
+    "projectileSpeed": 300,
+    "projectileType": "pin",
+    "targetType": "ground",
+    "upgrades": [
+      {
+        "level": 2,
+        "cost": 150,
+        "damage": 15,
+        "fireRate": 0.4,
+        "range": 170
+      },
+      {
+        "level": 3,
+        "cost": 250,
+        "damage": 22,
+        "fireRate": 0.3,
+        "range": 190
+      }
+    ]
+  },
+  "buttonMortar": {
+    "id": "buttonMortar",
+    "name": "Button Mortar",
+    "description": "Splash AoE damage, hits multiple enemies",
+    "cost": 150,
+    "damage": 15,
+    "fireRate": 1.2,
+    "range": 140,
+    "projectileSpeed": 200,
+    "projectileType": "button",
+    "targetType": "ground",
+    "splashRadius": 60,
+    "upgrades": [
+      {
+        "level": 2,
+        "cost": 200,
+        "damage": 22,
+        "fireRate": 1.0,
+        "range": 160,
+        "splashRadius": 70
+      },
+      {
+        "level": 3,
+        "cost": 350,
+        "damage": 35,
+        "fireRate": 0.8,
+        "range": 180,
+        "splashRadius": 80
+      }
+    ]
+  },
+  "woolCannon": {
+    "id": "woolCannon",
+    "name": "Wool Cannon",
+    "description": "Heavy beam attack with high damage",
+    "cost": 200,
+    "damage": 40,
+    "fireRate": 2.0,
+    "range": 180,
+    "projectileSpeed": 400,
+    "projectileType": "wool",
+    "targetType": "ground",
+    "upgrades": [
+      {
+        "level": 2,
+        "cost": 300,
+        "damage": 60,
+        "fireRate": 1.7,
+        "range": 200
+      },
+      {
+        "level": 3,
+        "cost": 500,
+        "damage": 90,
+        "fireRate": 1.4,
+        "range": 220
+      }
+    ]
+  },
+  "patchTotem": {
+    "id": "patchTotem",
+    "name": "Patch Totem",
+    "description": "Support tower that heals and buffs nearby towers",
+    "cost": 180,
+    "damage": 0,
+    "fireRate": 0,
+    "range": 120,
+    "projectileSpeed": 0,
+    "projectileType": null,
+    "targetType": "support",
+    "buffRadius": 120,
+    "buffType": "reload",
+    "buffAmount": 0.25,
+    "healAmount": 0,
+    "upgrades": [
+      {
+        "level": 2,
+        "cost": 250,
+        "buffRadius": 150,
+        "buffAmount": 0.35
+      },
+      {
+        "level": 3,
+        "cost": 400,
+        "buffRadius": 180,
+        "buffAmount": 0.5
+      }
+    ]
+  },
+  "spindleWard": {
+    "id": "spindleWard",
+    "name": "Spindle Ward",
+    "description": "Anti-air darts that target flying enemies",
+    "cost": 120,
+    "damage": 12,
+    "fireRate": 0.6,
+    "range": 160,
+    "projectileSpeed": 350,
+    "projectileType": "dart",
+    "targetType": "air",
+    "upgrades": [
+      {
+        "level": 2,
+        "cost": 180,
+        "damage": 18,
+        "fireRate": 0.5,
+        "range": 180
+      },
+      {
+        "level": 3,
+        "cost": 300,
+        "damage": 28,
+        "fireRate": 0.4,
+        "range": 200
+      }
+    ]
+  }
+}

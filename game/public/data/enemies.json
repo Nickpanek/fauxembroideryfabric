@@ -1,0 +1,62 @@
+{
+  "wolf": {
+    "id": "wolf",
+    "name": "Wolf",
+    "description": "Fast rusher that moves quickly through the path",
+    "hp": 30,
+    "speed": 80,
+    "reward": 10,
+    "type": "ground",
+    "armor": 0,
+    "size": 24
+  },
+  "threadling": {
+    "id": "threadling",
+    "name": "Threadling",
+    "description": "Swarm unit with low HP but comes in large numbers",
+    "hp": 15,
+    "speed": 60,
+    "reward": 5,
+    "type": "ground",
+    "armor": 0,
+    "size": 18
+  },
+  "nightmoth": {
+    "id": "nightmoth",
+    "name": "Nightmoth",
+    "description": "Flying enemy that bypasses ground towers",
+    "hp": 25,
+    "speed": 70,
+    "reward": 15,
+    "type": "air",
+    "armor": 0,
+    "size": 22,
+    "flyHeight": 40
+  },
+  "tatterbeast": {
+    "id": "tatterbeast",
+    "name": "Tatterbeast",
+    "description": "Slow tank with high HP and armor",
+    "hp": 200,
+    "speed": 30,
+    "reward": 30,
+    "type": "ground",
+    "armor": 5,
+    "size": 32
+  },
+  "spindler": {
+    "id": "spindler",
+    "name": "Spindler",
+    "description": "Flying support that buffs nearby allies",
+    "hp": 40,
+    "speed": 50,
+    "reward": 20,
+    "type": "air",
+    "armor": 0,
+    "size": 26,
+    "flyHeight": 45,
+    "buffRadius": 80,
+    "buffType": "speed",
+    "buffAmount": 0.2
+  }
+}
