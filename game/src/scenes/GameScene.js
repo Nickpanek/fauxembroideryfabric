@@ -88,13 +88,13 @@ export default class GameScene extends Scene {
       'Ready!',
       () => this.startNextWave()
     );
-    this.readyButton.setVisible(!this.waveInProgress);
+    this.readyButton.setVisible(true); // Start visible for first wave
 
     // Setup input
     this.setupInput();
 
-    // Start first wave after delay
-    setTimeout(() => this.startNextWave(), 1000);
+    // Launch UIScene to run parallel to GameScene
+    this.launchScene('ui');
 
     console.log('GameScene: create() complete');
   }
@@ -179,6 +179,8 @@ export default class GameScene extends Scene {
     this.enemySystem.queueWaveSpawn(waveData, 'default');
     this.waveInProgress = true;
     this.readyButton.setVisible(false);
+
+    console.log(`Wave ${this.currentWave} started!`);
   }
 
   selectTowerType(type) {
@@ -264,6 +266,12 @@ export default class GameScene extends Scene {
 
   update(dt) {
     if (this.paused || this.gameOver) return;
+
+    // Safety check
+    if (!this.enemySystem || !this.towerSystem || !this.projectileSystem) {
+      console.error('GameScene: Systems not initialized');
+      return;
+    }
 
     // Update systems
     this.enemySystem.update(dt);

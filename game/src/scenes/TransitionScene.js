@@ -120,13 +120,14 @@ export default class TransitionScene extends Scene {
    * Complete transition and resume game
    */
   complete() {
-    this.stopScene('transition');
-
-    // Resume game scene if it exists
+    // Resume game scene first
     const gameScene = this.game.getScene('game');
     if (gameScene) {
       gameScene.onTransitionComplete();
     }
+
+    // Then stop transition scene
+    this.stopScene('transition');
   }
 
   shutdown() {
