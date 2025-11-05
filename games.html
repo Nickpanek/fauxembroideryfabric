@@ -1,0 +1,137 @@
+---
+layout: null
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Games | {{ site.title }}</title>
+  <meta name="description" content="Exciting games coming soon from {{ site.title }}. Stay tuned for fun and engaging gameplay experiences.">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {% seo %}
+  {% include analytics.html %}
+  <style>
+    .coming-soon-container {
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: var(--shadow-md);
+      margin: 2rem 0;
+    }
+
+    .coming-soon-container h2 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      color: var(--brand);
+      font-weight: 700;
+    }
+
+    .coming-soon-container p {
+      font-size: 1.3rem;
+      color: var(--muted);
+      max-width: 600px;
+      line-height: 1.8;
+    }
+
+    .coming-soon-icon {
+      font-size: 6rem;
+      margin-bottom: 2rem;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      .coming-soon-container h2 {
+        font-size: 2rem;
+      }
+
+      .coming-soon-container p {
+        font-size: 1.1rem;
+      }
+
+      .coming-soon-icon {
+        font-size: 4rem;
+      }
+    }
+
+    /* Dark theme support */
+    @media (prefers-color-scheme: dark) {
+      .coming-soon-container {
+        background: var(--card);
+      }
+
+      .coming-soon-container h2 {
+        color: var(--brand);
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="visually-hidden-focusable">Skip to content</a>
+
+  <header role="banner">
+    <nav aria-label="Primary">
+      <a href="{{ '/' | relative_url }}" class="logo">{{ site.title }}</a>
+      <div class="nav-links">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/collections/florals' | relative_url }}">Florals</a>
+        <a href="{{ '/collections/catholic' | relative_url }}">Catholic</a>
+        <a href="{{ '/collections/western' | relative_url }}">Western</a>
+        <a href="{{ '/collections/holiday' | relative_url }}">Holiday</a>
+        <a href="{{ '/collections/geometric' | relative_url }}">Geometric</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">Games</h1>
+      <p>
+        Get ready for exciting new gaming experiences
+      </p>
+    </section>
+
+    <!-- Coming Soon Message -->
+    <section aria-labelledby="coming-soon-title">
+      <div class="coming-soon-container">
+        <div class="coming-soon-icon">🎮</div>
+        <h2 id="coming-soon-title">Coming Soon</h2>
+        <p>
+          We're working on something exciting! New games will be launching here soon.
+          Check back later for fun and engaging gameplay experiences.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <nav aria-label="Collections">
+      <div class="nav-links" style="justify-content:center; flex-wrap: wrap; gap: 1rem;">
+        <a href="{{ '/collections/florals' | relative_url }}">Florals</a>
+        <a href="{{ '/collections/catholic' | relative_url }}">Catholic</a>
+        <a href="{{ '/collections/western' | relative_url }}">Western</a>
+        <a href="{{ '/collections/holiday' | relative_url }}">Holiday</a>
+        <a href="{{ '/collections/geometric' | relative_url }}">Geometric</a>
+        <a href="{{ '/collections/psychedelic' | relative_url }}">Psychedelic</a>
+        <a href="{{ '/collections/cryptid-ufo' | relative_url }}">Cryptid &amp; UFOs</a>
+        <a href="{{ '/collections/animals-wildlife' | relative_url }}">Animals &amp; Wildlife</a>
+        <a href="{{ '/collections/cheater-quilts' | relative_url }}">Cheater Quilts</a>
+      </div>
+    </nav>
+
+    <p style="text-align:center;margin-top:1rem;">
+      &copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.
+    </p>
+  </footer>
+
+</body>
+</html>
