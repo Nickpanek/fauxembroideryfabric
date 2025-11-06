@@ -66,6 +66,7 @@ export default class GameScene extends Scene {
     this.currentWave = 0;
     this.maxWaves = this.wavesData.waves.length;
     this.waveInProgress = false;
+    this.transitionInProgress = false; // Prevents double-clicks during transitions
     this.gameSpeed = 1;
     this.paused = false;
     this.gameOver = false;
@@ -162,7 +163,7 @@ export default class GameScene extends Scene {
   }
 
   startNextWave() {
-    if (this.waveInProgress || this.gameOver) return;
+    if (this.waveInProgress || this.transitionInProgress || this.gameOver) return;
 
     this.currentWave++;
 
@@ -171,8 +172,9 @@ export default class GameScene extends Scene {
       return;
     }
 
-    // Immediately mark wave as in progress and hide button to prevent double-clicks
-    this.waveInProgress = true;
+    // Mark transition in progress and hide button to prevent double-clicks
+    // Don't set waveInProgress yet - that happens when enemies are actually queued
+    this.transitionInProgress = true;
     this.readyButton.setVisible(false);
 
     // Show transition
@@ -183,11 +185,15 @@ export default class GameScene extends Scene {
   }
 
   onTransitionComplete() {
-    // Start wave
+    // Transition complete, now actually start the wave
+    this.transitionInProgress = false;
+
+    // Start wave by queueing enemies
     const waveData = this.wavesData.waves[this.currentWave - 1];
     this.enemySystem.queueWaveSpawn(waveData, 'default');
+
+    // Now mark wave as in progress (after enemies are queued)
     this.waveInProgress = true;
-    this.readyButton.setVisible(false);
 
     console.log(`Wave ${this.currentWave} started!`);
   }
