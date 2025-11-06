@@ -28,11 +28,11 @@ export default class TransitionScene extends Scene {
     this.holdDuration = 0.6;
     this.slideOutDuration = 0.6;
 
-    // Create tween for slide in
+    // Create tween for slide in (duration in seconds)
     this.tweens.create(
       this,
       { imageX: this.centerX, imageAlpha: 1 },
-      this.fadeInDuration * 1000,
+      this.fadeInDuration,
       {
         easing: 'easeOut',
         onComplete: () => {
@@ -55,7 +55,7 @@ export default class TransitionScene extends Scene {
         this.tweens.create(
           this,
           { imageX: -this.centerX, imageAlpha: 0 },
-          this.slideOutDuration * 1000,
+          this.slideOutDuration,
           {
             easing: 'easeIn',
             onComplete: () => {
