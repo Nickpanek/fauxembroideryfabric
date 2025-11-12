@@ -8,20 +8,17 @@
   <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
 
-  <!-- Open Graph -->
   <meta property="og:title" content="{{ page.title }}">
   <meta property="og:description" content="{{ page.description }}">
   <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ page.image }}">
   <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
   <meta property="og:type" content="product">
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ page.title }}">
   <meta name="twitter:description" content="{{ page.description }}">
   <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/{{ page.image }}">
 
-  <!-- JSON-LD Product Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -30,22 +27,14 @@
     "description": "{{ page.description }}",
     "image": "{{ site.url }}{{ site.baseurl }}/assets/images/{{ page.image }}",
     "brand": { "@type": "Brand", "name": "Nick Panek Designs" },
-    "offers": {
-      "@type": "Offer",
-      "url": "{{ page.buy_url }}",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock",
-      "seller": { "@type": "Organization", "name": "Spoonflower" }
-    },
     "category": "Fabric",
     "material": "{{ page.material | default: 'Cotton' }}",
     "pattern": "{{ page.pattern_type | default: 'Embroidery' }}"
   }
   </script>
 
-  <!-- Page-specific tweaks -->
   <style>
-    .buy-button{
+   .buy-button{
       display:inline-block;
       padding:0.85rem 1.25rem;
       background:#8b0000;
@@ -55,25 +44,25 @@
       font-weight:700;
       line-height:1;
       border:2px solid #8b0000;
-      transition:transform .06s ease, background .15s ease, border-color .15s ease;
+      transition:transform.06s ease, background.15s ease, border-color.15s ease;
     }
-    .buy-button:hover,
-    .buy-button:focus{
+   .buy-button:hover,
+   .buy-button:focus{
       background:#6d0000;
       border-color:#6d0000;
       transform:translateY(-1px);
     }
-    .pattern-page .additional-info ul{
+   .pattern-page.additional-info ul{
       list-style:none;
       padding-left:0;
       margin:0 0 1rem 0;
     }
-    .pattern-page .additional-info li{
+   .pattern-page.additional-info li{
       position:relative;
       padding-left:34px;
-      margin:0 0 .65rem 0;
+      margin:0 0.65rem 0;
     }
-    .pattern-page .additional-info li::before{
+   .pattern-page.additional-info li::before{
       content:"";
       position:absolute;
       left:0;
@@ -87,7 +76,7 @@
       box-shadow:0 0 0 1px rgba(0,0,0,.08);
       image-rendering:auto;
     }
-    .pattern-details .tags{ margin:.75rem 0 1rem; }
+   .pattern-details.tags{ margin:.75rem 0 1rem; }
   </style>
 
   {% include analytics.html %}
@@ -140,7 +129,7 @@
           View on Spoonflower →
         </a>
 
-        {% if page.content != "" %}
+        {% if page.content!= "" %}
         <div class="additional-info">
           {{ content }}
         </div>
@@ -151,7 +140,7 @@
     <section class="related-patterns">
       <h2>You May Also Like</h2>
       <div class="pattern-grid">
-        {% assign related = site.patterns | where: 'collection_slug', page.collection_slug | where_exp: 'item', 'item.url != page.url' | limit: 3 %}
+        {% assign related = site.patterns | where: 'collection_slug', page.collection_slug | where_exp: 'item', 'item.url!= page.url' | limit: 3 %}
         {% for pattern in related %}
         <a href="{{ pattern.url | prepend: site.baseurl }}" class="pattern-card">
           <img src="{{ site.baseurl }}/assets/images/{{ pattern.image }}" alt="{{ pattern.title }}" loading="lazy">
