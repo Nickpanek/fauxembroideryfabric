@@ -22,19 +22,21 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": "CreativeWork",
     "name": "{{ page.title }}",
     "description": "{{ page.description }}",
     "image": "{{ site.url }}{{ site.baseurl }}/assets/images/{{ page.image }}",
-    "brand": { "@type": "Brand", "name": "Nick Panek Designs" },
+    "author": { 
+      "@type": "Organization", 
+      "name": "Nick Panek Designs" 
+    },
     "category": "Fabric",
     "material": "{{ page.material | default: 'Cotton' }}",
     "pattern": "{{ page.pattern_type | default: 'Embroidery' }}"
   }
   </script>
-
   <style>
-   .buy-button{
+  .buy-button{
       display:inline-block;
       padding:0.85rem 1.25rem;
       background:#8b0000;
@@ -46,23 +48,23 @@
       border:2px solid #8b0000;
       transition:transform.06s ease, background.15s ease, border-color.15s ease;
     }
-   .buy-button:hover,
-   .buy-button:focus{
+  .buy-button:hover,
+  .buy-button:focus{
       background:#6d0000;
       border-color:#6d0000;
       transform:translateY(-1px);
     }
-   .pattern-page.additional-info ul{
+  .pattern-page.additional-info ul{
       list-style:none;
       padding-left:0;
       margin:0 0 1rem 0;
     }
-   .pattern-page.additional-info li{
+  .pattern-page.additional-info li{
       position:relative;
       padding-left:34px;
       margin:0 0.65rem 0;
     }
-   .pattern-page.additional-info li::before{
+  .pattern-page.additional-info li::before{
       content:"";
       position:absolute;
       left:0;
@@ -76,7 +78,7 @@
       box-shadow:0 0 0 1px rgba(0,0,0,.08);
       image-rendering:auto;
     }
-   .pattern-details.tags{ margin:.75rem 0 1rem; }
+  .pattern-details.tags{ margin:.75rem 0 1rem; }
   </style>
 
   {% include analytics.html %}
