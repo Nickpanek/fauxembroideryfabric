@@ -21,18 +21,29 @@
 
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
+    "@context": "https://schema.org/",
+    "@type": "Product",
     "name": "{{ page.title }}",
-    "description": "{{ page.description }}",
     "image": "{{ site.url }}{{ site.baseurl }}/assets/images/{{ page.image }}",
-    "author": { 
-      "@type": "Organization", 
-      "name": "Nick Panek Designs" 
+    "description": "{{ page.description }}",
+    "brand": {
+      "@type": "Brand",
+      "name": "Nick Panek Designs"
     },
-    "category": "Fabric",
-    "material": "{{ page.material | default: 'Cotton' }}",
-    "pattern": "{{ page.pattern_type | default: 'Embroidery' }}"
+    "category": "Fabric Pattern",
+    "offers": {
+      "@type": "AggregateOffer",
+      "url": "{{ page.buy_url }}",
+      "priceCurrency": "USD",
+      "lowPrice": "5.00",
+      "highPrice": "60.00",
+      "offerCount": "15",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Spoonflower"
+      }
+    }
   }
   </script>
   <style>
